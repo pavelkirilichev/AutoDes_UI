@@ -1,22 +1,23 @@
 <template>
   <div class="main">
-    <nav-bar></nav-bar>
-    <footer></footer>
+    <NavBar />
+    <div class="main__center">
+      <Main />
+    </div>
+
+    <Footer />
+
 
   </div>
 
 </template>
 
-<script>
+<script setup>
 import NavBar from "./UI/NavBar.vue";
 import Footer from "./UI/Footer.vue";
+import Main from "./UI/PersonalAccount/Main.vue";
 
-export default {
-  components: {
-    NavBar,
-    Footer
-  },
-};
+
 </script>
 
 <style>
@@ -41,9 +42,15 @@ button {
 }
 
 .main {
-  margin: 5px;
   display: flex;
-  flex-wrap: wrap;
-  gap: 20px;
+  flex-direction: column;
+  justify-content: space-between;
+  min-height: 100vh;
+  background: #F5F5F7;
+}
+
+.main__center {
+  margin-top: 60px;
+  min-height: calc(100vh - 271px);
 }
 </style>

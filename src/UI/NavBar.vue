@@ -2,8 +2,8 @@
     <nav class="navbar">
         <ul class="navbar__left">
             <li class="logo__block">
-                <img src="../../public/images/navbar/logo.svg" alt="">
-                <span class="item__text">Autodesigner</span>
+                <img src="/images/logo.svg" alt="">
+                <span class="item__text text__logo">Autodesigner</span>
             </li>
             <li>
                 <span class="item__text">Мои работы</span>
@@ -22,33 +22,24 @@
             </li>
         </ul>
         <div class="navbar__right">
-            <button-blue>Приветствуем, Олег!</button-blue>
-            <button-pink-transparent>Выйти</button-pink-transparent>
+            <Button color="blue">Приветствуем, Олег!</Button>
+            <Button color="pink-transparent">Выйти</Button>
         </div>
     </nav>
 </template>
 
-<script>
-import ButtonBlue from "./Buttons/ButtonBlue.vue";
-import ButtonPinkTransparent from "./Buttons/ButtonPinkTransparent.vue";
-
-export default {
-    components: {
-        ButtonBlue,
-        ButtonPinkTransparent,
-    },
-};
+<script setup>
+import Button from "./Buttons/Button.vue";
 </script>
 
 <style scoped>
 .navbar {
-    max-width: 1170px;
+    padding-top: 20px;
+    width: 1170px;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;
     align-items: center;
-    width: 100%;
-    height: 37px;
 }
 
 .navbar__left {
@@ -63,7 +54,14 @@ export default {
     align-items: center;
 }
 
+.logo__block img {
+    cursor: pointer;
+}
+
 .item__text {
+    cursor: pointer;
+    font-family: 'Montserrat';
+    font-weight: 500;
     font-size: 15px;
     line-height: 18px;
     color: #000000;
@@ -73,6 +71,11 @@ export default {
     display: flex;
     align-items: center;
     gap: 15px;
+}
+
+.text__logo {
+    font-weight: 400;
+    font-family: 'Inter';
 }
 </style>
 
