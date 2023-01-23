@@ -2,7 +2,6 @@
     <div class="PA__main">
         <span class="title">Личный кабинет</span>
         <PA_Menu />
-
     </div>
 </template>
 

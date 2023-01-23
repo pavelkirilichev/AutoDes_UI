@@ -35,7 +35,8 @@ import Button from "./Buttons/Button.vue";
 <style scoped>
 .navbar {
     padding-top: 20px;
-    width: 1170px;
+    max-width: 1170px;
+    width: 100%;
     margin: 0 auto;
     display: flex;
     justify-content: space-between;

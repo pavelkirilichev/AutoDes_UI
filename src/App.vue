@@ -4,20 +4,14 @@
     <div class="main__center">
       <Main />
     </div>
-
     <Footer />
-
-
   </div>
-
 </template>
 
 <script setup>
 import NavBar from "./UI/NavBar.vue";
 import Footer from "./UI/Footer.vue";
 import Main from "./UI/PersonalAccount/Main.vue";
-
-
 </script>
 
 <style>
@@ -42,6 +36,7 @@ button {
 }
 
 .main {
+  padding: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
