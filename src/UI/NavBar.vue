@@ -6,19 +6,19 @@
                 <span class="item__text text__logo">Autodesigner</span>
             </li>
             <li>
-                <span class="item__text">Мои работы</span>
+                <span class="black--medium">Мои работы</span>
             </li>
             <li>
-                <span class="item__text">FAQ</span>
+                <span class="black--medium">FAQ</span>
             </li>
             <li>
-                <span class="item__text">О нас</span>
+                <span class="black--medium">О нас</span>
             </li>
             <li>
-                <span class="item__text">Тарифы</span>
+                <span class="black--medium">Тарифы</span>
             </li>
             <li>
-                <span class="item__text">Блог</span>
+                <span class="black--medium">Блог</span>
             </li>
         </ul>
         <div class="navbar__right">
@@ -59,24 +59,11 @@ import Button from "./Buttons/Button.vue";
     cursor: pointer;
 }
 
-.item__text {
-    cursor: pointer;
-    font-family: 'Montserrat';
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 18px;
-    color: #000000;
-}
 
 .navbar__right {
     display: flex;
     align-items: center;
     gap: 15px;
-}
-
-.text__logo {
-    font-weight: 400;
-    font-family: 'Inter';
 }
 </style>
 

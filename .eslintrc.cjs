@@ -11,6 +11,8 @@ module.exports = {
     "@vue/eslint-config-prettier",
   ],
   rules: {
-    'vue/multi-word-component-names': 'off', 
-  }
+    "vue/multi-word-component-names": "off",
+    "no-unused-vars": "off",
+    "vue/require-v-for-key": "off",
+  },
 };

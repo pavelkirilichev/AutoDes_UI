@@ -5,22 +5,22 @@
                 <img src="/images/logo.svg" alt="">
                 <span class="item__text text__logo">Autodesigner</span>
             </div>
-            <p class="item__text">
+            <p class="dark--medium">
                 2022 ООО «Autodesigner»<br />
                 autodesigner@mail.ru
             </p>
         </div>
         <div class="footer__list-item">
-            <span class="item__text">FAQ</span>
-            <span class="item__text">О нас</span>
-            <span class="item__text">Тарифы</span>
+            <span class="dark--medium">FAQ</span>
+            <span class="dark--medium">О нас</span>
+            <span class="dark--medium">Тарифы</span>
         </div>
         <div class="footer__list-item">
-            <span class="item__text">Политика конфиденциальности</span>
-            <span class="item__text">Предложить улучшения</span>
+            <span class="dark--medium">Политика конфиденциальности</span>
+            <span class="dark--medium">Предложить улучшения</span>
         </div>
         <div class="footer__list-item-right">
-            <span class="item__text no-click">Связаться с нами</span>
+            <span class="dark--medium no-click">Связаться с нами</span>
             <div class="social__list">
                 <img src="/images/footer/vk.svg" alt="">
                 <img src="/images/footer/tg.svg" alt="">
@@ -83,30 +83,6 @@
 
 .logo__block img {
     cursor: pointer;
-}
-
-.item__text {
-    cursor: pointer;
-    font-family: 'Montserrat';
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 18px;
-    color: #000000;
-}
-
-.text__logo {
-    font-weight: 400;
-    font-family: 'Inter';
-}
-
-.footer__bottom p {
-    font-family: 'Montserrat';
-    font-style: normal;
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-    color: #303030;
 }
 </style>
 

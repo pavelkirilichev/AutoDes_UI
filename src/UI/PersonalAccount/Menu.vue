@@ -1,11 +1,11 @@
 <template>
     <div class="menu__main">
         <div class="menu__row">
-            <div class="menu__item"><span>Данные</span></div>
-            <div class="menu__item"><span>Безопасность</span></div>
-            <div class="menu__item menu__item-active"><span>Тарифы</span></div>
-            <div class="menu__item"><span>Поддержка</span></div>
-            <div class="menu__item"><span>Выбор оплаты</span></div>
+            <div class="menu__item"><span class="dark--medium">Данные</span></div>
+            <div class="menu__item"><span class="dark--medium">Безопасность</span></div>
+            <div class="menu__item menu__item-active"><span class="violet--medium">Тарифы</span></div>
+            <div class="menu__item"><span class="dark--medium">Поддержка</span></div>
+            <div class="menu__item"><span class="dark--medium">Выбор оплаты</span></div>
         </div>
     </div>
 </template>
@@ -17,16 +17,9 @@
     display: flex;
     flex-direction: column;
     align-items: center;
+    padding-bottom: 40px;
 }
 
-.title {
-    font-family: 'Montserrat';
-    font-weight: 600;
-    font-size: 25px;
-    line-height: 30px;
-    text-align: center;
-    color: #000000;
-}
 
 .menu__row {
     padding-top: 40px;
@@ -42,27 +35,10 @@
     padding: 5px 33px;
 }
 
-.menu__item span {
-    font-family: 'Montserrat';
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-    color: #303030
-}
 
 .menu__item-active {
     background: #E2E2E2;
     border-radius: 5px;
-}
-
-.menu__item-active span {
-    font-family: 'Montserrat';
-    font-weight: 500;
-    font-size: 15px;
-    line-height: 18px;
-    text-align: center;
-    color: #3B0CFA;
 }
 </style>
 
