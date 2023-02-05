@@ -2,13 +2,26 @@
     <div class="PA__main">
         <span class="title">Личный кабинет</span>
         <PA_Menu />
-        <Rates />
+        <chapter />
     </div>
 </template>
 
 <script setup>
 import PA_Menu from "./Menu.vue";
 import Rates from "./Rates/Main.vue";
+import Support from "./Support/Main.vue";
+import Payment from "./Payment/Main.vue";
+import Date from "./Date/Main.vue"
+import Security from "./Security/Main.vue"
+
+export default {
+    data() {
+        return {
+            chapter: Rates
+        }
+    }
+}
+
 </script>
 
 <style scoped>

@@ -6,7 +6,7 @@
                 <span class="item__text text__logo">Autodesigner</span>
             </li>
             <li>
-                <span class="black--medium">Мои работы</span>
+                <span class="black--medium">Мои проекты</span>
             </li>
             <li>
                 <span class="black--medium">FAQ</span>

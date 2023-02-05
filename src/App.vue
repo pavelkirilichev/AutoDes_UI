@@ -35,6 +35,18 @@ button {
   cursor: pointer;
 }
 
+textarea {
+  border: none;
+  overflow: auto;
+  outline: none;
+
+  -webkit-box-shadow: none;
+  -moz-box-shadow: none;
+  box-shadow: none;
+
+  resize: none;
+}
+
 .main {
   padding: 0 10px;
   display: flex;
@@ -145,7 +157,7 @@ button {
   color: #BABABA;
 }
 
-.green-medium {
+.green--medium {
   font-family: 'Gilroy';
   font-weight: 500;
   font-size: 15px;

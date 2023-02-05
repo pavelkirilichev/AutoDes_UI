@@ -3,7 +3,7 @@
         <div class="item">
             <div class="title">
                 <span class="dark--semibold">SMM</span>
-                <span class="dark--semibold">399 ₽ </span>
+                <span class="dark--semibold">399 ₽</span>
             </div>
             <div class="list">
                 <div v-for="item in ratesFirst" class="rates__item">
@@ -17,7 +17,7 @@
         <div class="item item-active">
             <div class="title">
                 <span class="dark--semibold">Презентации</span>
-                <span class="dark--semibold">449 ₽ </span>
+                <span class="dark--semibold">449 ₽</span>
             </div>
             <div class="list">
                 <div v-for="item in ratesSecond" class="rates__item">
@@ -31,7 +31,7 @@
         <div class="item">
             <div class="title">
                 <span class="dark--semibold">Все и сразу</span>
-                <span class="dark--semibold">649 ₽ </span>
+                <span class="dark--semibold">649 ₽</span>
             </div>
             <div class="list">
                 <div v-for="item in ratesThird" class="rates__item">
