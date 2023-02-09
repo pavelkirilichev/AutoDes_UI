@@ -40,7 +40,7 @@ function deleteCard(id) {
 
 function addCard() {
     Cards.value = Cards.value.concat({
-        id: Cards.value[Cards.value.length - 1].id + 1,
+        id: Cards.value.length > 0 ? Cards.value[Cards.value.length - 1].id + 1 : 0,
         number: 7777,
         payment_system: "mastercard",
         bank: "tinkoff"
