@@ -1,36 +1,73 @@
 <template>
     <div class="payment__main">
+        <Transition>
+            <AddCardModal @SetCardModal="SetCardModal" @addCard="addCard" v-if="CardModal" />
+        </Transition>
+
         <span class="dark--semibold">Выбор карты</span>
         <div class="list">
-            <div class="item item__add">
+            <div class="item item__add" @click="SetCardModal()">
                 <img src="/images/payment/plus.svg" alt="">
-                <span class="white--medium">Добавить
-                    карту</span>
+                <span class="white--medium">Добавить карту</span>
             </div>
-            <div class="item item__req">
+            <div class="item item__req" v-for="card in Cards">
                 <div class="item__req__inner">
-                    <img src="/images/payment/tinkoff.svg" alt="">
-                    <img src="/images/payment/trash.svg" alt="" class="delete">
+                    <img :src="`/images/payment/${card.bank}.svg`" alt="">
+                    <img src="/images/payment/trash.svg" alt="" class="delete" @click="deleteCard(card.id)">
                 </div>
                 <div class="item__req__inner">
-                    <span class="white--medium">**6318</span>
-                    <img src="/images/payment/mastercard.svg" alt="">
-                </div>
-            </div>
-            <div class="item item__req">
-                <div class="item__req__inner">
-                    <img src="/images/payment/tinkoff.svg" alt="">
-                    <img src="/images/payment/trash.svg" alt="" class="delete">
-                </div>
-                <div class="item__req__inner">
-                    <span class="white--medium">**6318</span>
-                    <img src="/images/payment/mastercard.svg" alt="">
+                    <span class="white--medium">**{{ card.number }}</span>
+                    <img :src="`/images/payment/${card.payment_system}.svg`" alt="">
                 </div>
             </div>
-
         </div>
     </div>
 </template>
+
+<script setup>
+import { ref, defineEmits } from 'vue';
+import AddCardModal from './AddCardModal.vue';
+
+const CardModal = ref(0)
+
+function SetCardModal() {
+    CardModal.value = CardModal.value == 0 ? 1 : 0
+}
+
+function deleteCard(id) {
+    Cards.value = Cards.value.filter(item => item.id != id)
+}
+
+function addCard() {
+    Cards.value = Cards.value.concat({
+        id: Cards.value[Cards.value.length - 1].id + 1,
+        number: 7777,
+        payment_system: "mastercard",
+        bank: "tinkoff"
+    })
+}
+
+const emit = defineEmits(['SetCardModal', 'addCard'])
+
+const Cards = ref(
+    [
+        {
+            id: 1,
+            number: 6318,
+            payment_system: "mastercard",
+            bank: "tinkoff"
+        },
+        {
+            id: 2,
+            number: 6319,
+            payment_system: "mastercard",
+            bank: "tinkoff"
+        },
+    ]
+)
+
+
+</script>
 
 <style scoped>
 .payment__main {
@@ -42,11 +79,12 @@
 
 .list {
     display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
     gap: 20px;
 }
 
 .item {
-
     width: 151px;
     height: 82px;
     border-radius: 5px;
@@ -81,5 +119,15 @@
 
 .delete {
     cursor: pointer;
+}
+
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 0.15s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
 }
 </style>

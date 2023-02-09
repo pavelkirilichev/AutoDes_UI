@@ -3,28 +3,45 @@
         <span class="black--medium title">Сменить данные</span>
         <span class="black--medium">Данные были обновлены 1 месяц назад</span>
         <div class="form">
-            <div class="form__item">
+            <div class="form__item" v-for="item in Inputs">
                 <img src="/images/date/key.svg" alt="">
-                <input type="text" placeholder="Введите старый пароль" class="dark--medium">
-                <img src="/images/date/blind.svg" alt="">
+                <input :type="item.typeInput" :placeholder="item.title" class="dark--medium">
+                <img :src="item.typeInput == 'password' ? '/images/date/blind.svg' : '/images/date/blind.svg'" alt=""
+                    @click="changeInput(item.id)">
             </div>
-            <div class="form__item">
-                <img src="/images/date/key.svg" alt="">
-                <input type="text" placeholder="Придумайте новый пароль" class="dark--medium">
-                <img src="/images/date/blind.svg" alt="">
-            </div>
-            <div class="form__item">
-                <img src="/images/date/key.svg" alt="">
-                <input type="text" placeholder="Повторите новый пароль" class="dark--medium">
-                <img src="/images/date/blind.svg" alt="">
-            </div>
+
         </div>
         <Button color="blue" class="support__btn">Отправить</Button>
     </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
 import Button from '@/UI/Buttons/Button.vue';
+
+function changeInput(id) {
+    Inputs.value[id - 1].typeInput = Inputs.value[id - 1].typeInput == "password" ? "text" : "password"
+}
+
+const Inputs = ref(
+    [
+        {
+            id: 1,
+            title: "Введите старый пароль",
+            typeInput: "password"
+        },
+        {
+            id: 2,
+            title: "Придумайте новый пароль",
+            typeInput: "password"
+        },
+        {
+            id: 3,
+            title: "Повторите новый пароль",
+            typeInput: "password"
+        }
+    ]
+)
 </script>
 
 <style scoped>
@@ -56,6 +73,10 @@ import Button from '@/UI/Buttons/Button.vue';
     background: #FFFFFF;
     border-radius: 5px;
     height: 36px;
+}
+
+.form__item img {
+    cursor: pointer;
 }
 
 input {

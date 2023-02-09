@@ -1,73 +1,80 @@
 <template>
     <div class="rates__main">
-        <div class="item">
+        <div class="item" :class="rate.id == RateSelect ? 'item-active' : ''" v-for="rate in rates">
             <div class="title">
-                <span class="dark--semibold">SMM</span>
-                <span class="dark--semibold">399 ₽</span>
+                <span class="dark--semibold">{{ rate.title }}</span>
+                <span class="dark--semibold">{{ rate.price }} ₽</span>
             </div>
             <div class="list">
-                <div v-for="item in ratesFirst" class="rates__item">
-                    <img src="/images/rates/mark-blue.svg" alt="">
-                    <p class="dark--medium" v-html="item"></p>
+                <div v-for="option in rate.options" class="rates__item">
+                    <img alt=""
+                        :src="rate.id == RateSelect ? '/images/rates/mark-pink.svg' : '/images/rates/mark-blue.svg'">
+                    <p class="dark--medium" v-html="option"></p>
                 </div>
             </div>
-            <Button color="blue" class="item__btn">Выбрать тариф</Button>
-            <p class="violet--medium align--center">При оплате на 6 месяцев 1799 (~299 рублей в месяц)</p>
+            <Button :color="rate.id == RateSelect ? 'pink' : 'blue'" class="item__btn"
+                @click="setRateSelect(rate.id)">Выбрать тариф</Button>
+            <p class="align--center" :class="rate.id == RateSelect ? 'violet--medium' : 'violet--medium'">{{
+                rate.description
+            }}</p>
         </div>
-        <div class="item item-active">
-            <div class="title">
-                <span class="dark--semibold">Презентации</span>
-                <span class="dark--semibold">449 ₽</span>
-            </div>
-            <div class="list">
-                <div v-for="item in ratesSecond" class="rates__item">
-                    <img src="/images/rates/mark-pink.svg" alt="">
-                    <p class="dark--medium" v-html="item"></p>
-                </div>
-            </div>
-            <Button color="pink" class="item__btn">Выбрать тариф</Button>
-            <p class="violet--medium align--center">При оплате на 6 месяцев 2399 (~399 рублей в месяц)</p>
-        </div>
-        <div class="item">
-            <div class="title">
-                <span class="dark--semibold">Все и сразу</span>
-                <span class="dark--semibold">649 ₽</span>
-            </div>
-            <div class="list">
-                <div v-for="item in ratesThird" class="rates__item">
-                    <img src="/images/rates/mark-blue.svg" alt="">
-                    <p class="dark--medium" v-html="item"></p>
-                </div>
-            </div>
-            <Button color="blue" class="item__btn">Выбрать тариф</Button>
-            <p class="violet--medium align--center">При оплате на 6 месяцев 3299 (~549 рублей в месяц)</p>
-        </div>
+
     </div>
 </template>
 
 <script setup>
+import { ref } from 'vue';
+
 import Button from '@/UI/Buttons/Button.vue';
 
-let ratesFirst = [
-    "Работа с любыми вводными <br> (размер, текст, картинки)",
-    "Автоматическая <br> генерация изображения", "Редактирование изображений",
-    "Создание проектов",
-    "Скачивание изображений в любом формате (jpeg,png,svg)",
-    "Создание изображений для разных площадок и платформ"
+const RateSelect = ref(2)
+
+function setRateSelect(id) {
+    RateSelect.value = id
+}
+
+let rates = [
+    {
+        id: 1,
+        title: "SMM",
+        price: 399,
+        description: "При оплате на 6 месяцев 1799 (~299 рублей в месяц)",
+        options: [
+            "Работа с любыми вводными <br> (размер, текст, картинки)",
+            "Автоматическая <br> генерация изображения", "Редактирование изображений",
+            "Создание проектов",
+            "Скачивание изображений в любом формате (jpeg,png,svg)",
+            "Создание изображений для разных площадок и платформ"
+        ]
+    },
+    {
+        id: 2,
+        title: "Презентации",
+        price: 449,
+        description: "При оплате на 6 месяцев 2399 (~399 рублей в месяц)",
+        options: [
+            "Автоматическая <br> генерация <br> дизайна презентаций",
+            "Редактирование <br> слайдов",
+            "Создание фирменного стиля презентаций ",
+            "Работа с инфографикой: графики, таблицы",
+            "Совместное редактирование",
+            "Загрузка презентаций <br> в формате pdf"
+        ]
+    },
+    {
+        id: 3,
+        title: "Все и сразу",
+        price: 649,
+        description: "При оплате на 6 месяцев 3299 (~549 рублей в месяц)",
+        options: [
+            "Все функции тарифа «SММ»",
+            "Все функции тарифа «Презентации»",
+            "Доступ ко всему функционалу <br> платформмы",
+        ]
+    }
 ]
-let ratesSecond = [
-    "Автоматическая <br> генерация <br> дизайна презентаций",
-    "Редактирование <br> слайдов",
-    "Создание фирменного стиля презентаций ",
-    "Работа с инфографикой: графики, таблицы",
-    "Совместное редактирование",
-    "Загрузка презентаций <br> в формате pdf"
-]
-let ratesThird = [
-    "Все функции тарифа «SММ»",
-    "Все функции тарифа «Презентации»",
-    "Доступ ко всему функционалу <br> платформмы",
-]
+
+
 
 
 

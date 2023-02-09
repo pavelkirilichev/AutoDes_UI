@@ -1,15 +1,49 @@
 <template>
     <div class="menu__main">
         <div class="menu__row">
-            <div class="menu__item"><span class="dark--medium">Данные</span></div>
-            <div class="menu__item"><span class="dark--medium">Безопасность</span></div>
-            <div class="menu__item menu__item-active"><span class="violet--medium">Тарифы</span></div>
-            <div class="menu__item"><span class="dark--medium">Поддержка</span></div>
-            <div class="menu__item"><span class="dark--medium">Выбор оплаты</span></div>
+            <div v-for="item, index in menu" :key="index" class="menu__item"
+                :class="{ 'menu__item-active': chapterName == item.key }" @click="$emit('changeChapter', item.key)">
+                <span :class="{ 'violet--medium': chapterName == item.key, 'dark--medium': chapterName != item.key }">{{
+                    item.text
+                }}</span>
+            </div>
         </div>
     </div>
 </template>
-
+<script>
+export default {
+    data: () => ({
+        menu: [
+            {
+                text: "Данные",
+                key: "Date"
+            },
+            {
+                text: "Безопасность",
+                key: "Security"
+            },
+            {
+                text: "Тарифы",
+                key: "Rates"
+            },
+            {
+                text: "Поддержка",
+                key: "Support"
+            },
+            {
+                text: "Выбор оплаты",
+                key: "Payment"
+            }
+        ]
+    }),
+    emits: [
+        "changeChapter"
+    ],
+    props: {
+        chapterName: String
+    }
+}
+</script>
 
 <style scoped>
 .menu__main {

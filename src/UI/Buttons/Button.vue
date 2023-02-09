@@ -1,13 +1,13 @@
 <template>
   <button :class="{ [`button ${color}`]: color }">
-    <span class=" text">
+    <span class="text">
       <slot></slot>
     </span>
   </button>
 </template>
 
 <script setup>
-import defineProps from 'vue'
+import { defineProps } from 'vue'
 defineProps({
   color: String
 })

@@ -9,9 +9,13 @@
 </template>
 
 <script setup>
-import NavBar from "./UI/NavBar.vue";
+
 import Footer from "./UI/Footer.vue";
 import Main from "./UI/PersonalAccount/Main.vue";
+import ModalAuth from "./UI/Modals/ModalAuth.vue"
+import NavbarMob from "./UI/NavbarMob.vue";
+import FooterMob from "./UI/FooterMob.vue";
+import NavBar from "./UI/NavBar.vue";
 </script>
 
 <style>
@@ -57,7 +61,7 @@ textarea {
 }
 
 .main__center {
-  margin-top: 60px;
+  padding-top: 100px;
   min-height: calc(100vh - 271px);
 }
 
@@ -172,5 +176,11 @@ textarea {
 
 .align--center {
   text-align: center;
+}
+
+
+input {
+  border: none;
+  outline: none;
 }
 </style>

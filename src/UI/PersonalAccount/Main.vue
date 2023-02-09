@@ -1,12 +1,16 @@
 <template>
     <div class="PA__main">
         <span class="title">Личный кабинет</span>
-        <PA_Menu />
-        <chapter />
+        <PA_Menu @changeChapter="changeChapter" :chapterName="chapterName" />
+        <Transition mode="out-in">
+            <component :is="chapter" />
+        </Transition>
+
     </div>
 </template>
 
 <script setup>
+import { ref, computed } from 'vue'
 import PA_Menu from "./Menu.vue";
 import Rates from "./Rates/Main.vue";
 import Support from "./Support/Main.vue";
@@ -14,14 +18,23 @@ import Payment from "./Payment/Main.vue";
 import Date from "./Date/Main.vue"
 import Security from "./Security/Main.vue"
 
-export default {
-    data() {
-        return {
-            chapter: Rates
-        }
-    }
+const comp = ref({
+    Rates,
+    Support,
+    Payment,
+    Date,
+    Security
+})
+
+const chapterName = ref('Rates')
+
+function changeChapter(key) {
+    chapterName.value = key
 }
 
+const chapter = computed(() => {
+    return comp.value[chapterName.value]
+})
 </script>
 
 <style scoped>
@@ -41,5 +54,16 @@ export default {
     text-align: center;
     color: #000000;
 }
-</style>
 
+
+
+.v-enter-active,
+.v-leave-active {
+    transition: opacity 0.15s ease;
+}
+
+.v-enter-from,
+.v-leave-to {
+    opacity: 0;
+}
+</style>
