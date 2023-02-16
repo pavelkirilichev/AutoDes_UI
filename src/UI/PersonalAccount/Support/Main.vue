@@ -31,7 +31,7 @@
             <textarea class="support__textarea dark--medium" placeholder="Введите текст..."></textarea>
         </div>
         <Button color="blue" class="support__btn">Отправить</Button>
-    </div>
+</div>
 </template>
 
 <script setup>
@@ -60,8 +60,11 @@ const copyDisplay = ref(0)
 .question--mail {
     display: flex;
     align-items: center;
-    gap: 25px;
     height: 13px;
+}
+
+.question--mail>*+* {
+    margin-left: 25px
 }
 
 .mail-copy__block {

@@ -2,10 +2,10 @@
   <div class="main">
     <NavBar />
     <div class="main__center">
-      <Main />
+      <ModalFree />
     </div>
     <Footer />
-  </div>
+</div>
 </template>
 
 <script setup>
@@ -16,6 +16,8 @@ import ModalAuth from "./UI/Modals/ModalAuth.vue"
 import NavbarMob from "./UI/NavbarMob.vue";
 import FooterMob from "./UI/FooterMob.vue";
 import NavBar from "./UI/NavBar.vue";
+import ModalCash from "./UI/PersonalAccount/Payment/ModalCash.vue";
+import ModalFree from "./UI/PersonalAccount/Payment/ModalFree.vue";
 </script>
 
 <style>
@@ -52,7 +54,6 @@ textarea {
 }
 
 .main {
-  padding: 0 10px;
   display: flex;
   flex-direction: column;
   justify-content: space-between;
