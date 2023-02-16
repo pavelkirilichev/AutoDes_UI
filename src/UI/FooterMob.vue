@@ -40,8 +40,11 @@
     margin: 0 auto;
     display: flex;
     flex-direction: column;
-    gap: 20px;
     border-top: 1px solid #C2C2C2;
+}
+
+.footer>*+* {
+    margin-top: 20px
 }
 
 .footer__top {
@@ -54,7 +57,10 @@
 .social__list {
     display: flex;
     align-items: center;
-    gap: 20px;
+}
+
+.social__list>*+* {
+    margin-left: 20px
 }
 
 .social__list img {
@@ -66,13 +72,19 @@
 .footer__list-item {
     display: flex;
     flex-direction: column;
-    gap: 20px;
+}
+
+.footer__list-item>*+* {
+    margin-top: 20px
 }
 
 .logo__block {
     display: flex;
-    gap: 5px;
     align-items: center;
+}
+
+.logo__block>*+* {
+    margin-left: 5px
 }
 
 .logo__block img {

@@ -2,11 +2,12 @@
     <div class="rates">
         <span class="black--semibold">Тарифные планы</span>
         <div class="rates__title-block">
-            <span class="white--medium">Ваш тариф: {{ findTitle() }}</span>
+            <span class="white--medium">Ваш тариф: {{ RateTitle }}</span>
         </div>
         <span class="black--medium">Следующее списание: 24.09.2023</span>
         <div class="rates__main" :style="{ marginTop: '20px' }">
-            <div class="item" :class="rate.id == RateSelect ? 'item-active' : ''" v-for="rate in rates">
+            <div class="item" :class="rate.id == RateSelect ? 'item-active' : ''" v-for="rate in rates"
+                @mouseover="setRateSelect(rate.id)" @mouseleave="setRateSelect(0)" @click="setRateTitle(rate.title)">
                 <div class="title">
                     <span class="dark--semibold">{{ rate.title }}</span>
                     <span class="dark--semibold">{{ rate.price }} ₽</span>
@@ -18,8 +19,10 @@
                         <p class="dark--medium" v-html="option"></p>
                     </div>
                 </div>
-                <Button :color="rate.id == RateSelect ? 'pink' : 'blue'" class="item__btn"
-                    @click="setRateSelect(rate.id)">Выбрать тариф</Button>
+                <Button :color="rate.id == RateSelect ? 'pink' : 'blue'" class="item__btn">{{
+                    rate.title == RateTitle ?
+                        'Тариф выбран' : 'Выбрать тариф'
+                }}</Button>
                 <p class="align--center" :class="rate.id == RateSelect ? 'violet--medium' : 'violet--medium'">{{
                     rate.description
                 }}</p>
@@ -35,15 +38,21 @@ import { ref } from 'vue';
 
 import Button from '@/UI/Buttons/Button.vue';
 
-const RateSelect = ref(2)
+const RateSelect = ref(0)
+const RateTitle = ref("Презентации")
 
 function setRateSelect(id) {
     RateSelect.value = id
+    //const title = rates.find(item => item.id = id).title
+
+
 }
 
-function findTitle() {
-    return rates.find(item => item.id == RateSelect.value).title
+function setRateTitle(title) {
+    RateTitle.value = title
 }
+
+
 
 let rates = [
     {
@@ -111,10 +120,14 @@ let rates = [
     width: 100%;
     display: flex;
     flex-direction: row;
-    gap: 34px;
+}
+
+.rates__main>*+* {
+    margin-left: 34px
 }
 
 .item {
+    cursor: pointer;
     padding: 20px 0;
     width: 267px;
     height: 573px;
@@ -125,6 +138,7 @@ let rates = [
     border-radius: 10px;
 }
 
+
 .item-active {
     box-shadow: 0px 0px 9px 1px rgba(252, 113, 159, 0.28);
 }
@@ -133,7 +147,10 @@ let rates = [
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+}
+
+.title>*+* {
+    margin-top: 20px
 }
 
 .list {
@@ -142,12 +159,18 @@ let rates = [
     padding-left: 22px;
     display: flex;
     flex-direction: column;
-    gap: 15px;
+}
+
+.list>*+* {
+    margin-top: 15px
 }
 
 .rates__item {
     display: flex;
-    gap: 10px;
+}
+
+.rates__item>*+* {
+    margin-left: 10px
 }
 
 .item__btn {

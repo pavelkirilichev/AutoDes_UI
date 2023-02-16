@@ -108,7 +108,6 @@ const emit = defineEmits(['SetCardModal', 'addCard'])
 .card__form {
     display: flex;
     flex-direction: column;
-    gap: 75px;
     padding: 20px;
     margin-top: 20px;
     width: 100%;
@@ -117,10 +116,17 @@ const emit = defineEmits(['SetCardModal', 'addCard'])
     border-radius: 10px;
 }
 
+.card__form>*+* {
+    margin-top: 75px
+}
+
 .card__row {
     display: flex;
     justify-content: flex-end;
-    gap: 18px;
+}
+
+.card__row>*+* {
+    margin-left: 18px
 }
 
 .form__item {
@@ -167,15 +173,21 @@ const emit = defineEmits(['SetCardModal', 'addCard'])
 
 .item__last {
     display: flex;
-    gap: 10px;
     justify-content: space-between;
+}
+
+.item__last>*+* {
+    margin-left: 10px
 }
 
 .btn__container {
     margin-top: 20px;
     display: flex;
     justify-content: flex-end;
-    gap: 15px;
+}
+
+.btn__container>*+* {
+    margin-left: 15px
 }
 
 .btn__container button {

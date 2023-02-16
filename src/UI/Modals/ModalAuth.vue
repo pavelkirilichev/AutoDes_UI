@@ -43,12 +43,15 @@
     display: flex;
     justify-content: center;
     align-items: center;
-    gap: 10px;
     margin-top: 24px;
     width: 324px;
     height: 36px;
     background: #374EF3;
     border-radius: 5px;
+}
+
+.btn-add>*+* {
+    margin-left: 10px
 }
 
 .btn-add span {
@@ -83,8 +86,11 @@
 .accept {
     display: flex;
     align-items: center;
-    gap: 3px;
     margin-top: 24px;
+}
+
+.accept>*+* {
+    margin-left: 3px
 }
 
 .thumb {
@@ -120,7 +126,10 @@
     display: flex;
     justify-content: flex-end;
     align-items: flex-end;
-    gap: 5px;
+}
+
+.modal__enter>*+* {
+    margin-left: 5px
 }
 
 .modal__data {
@@ -133,8 +142,11 @@
 .data__enter {
     display: flex;
     flex-direction: column;
-    gap: 10px;
     margin-top: 20px;
+}
+
+.data__enter>*+* {
+    margin-top: 10px
 }
 
 .data__input {

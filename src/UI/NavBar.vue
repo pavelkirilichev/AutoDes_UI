@@ -57,13 +57,19 @@ import Button from "./Buttons/Button.vue";
 .navbar__left {
     display: flex;
     align-items: center;
-    gap: 40px;
+}
+
+.navbar__left>*+* {
+    margin-left: 40px
 }
 
 .logo__block {
     display: flex;
-    gap: 5px;
     align-items: center;
+}
+
+.logo__block>*+* {
+    margin-left: 5px
 }
 
 .logo__block img {
@@ -73,7 +79,10 @@ import Button from "./Buttons/Button.vue";
 .navbar__right {
     display: flex;
     align-items: center;
-    gap: 15px;
+}
+
+.navbar__right>*+* {
+    margin-left: 15px
 }
 </style>
 

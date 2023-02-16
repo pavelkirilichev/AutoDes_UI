@@ -56,7 +56,10 @@ import Button from "./Buttons/Button.vue";
 .navbar__topic__logo {
     display: flex;
     align-items: center;
-    gap: 5px;
+}
+
+.navbar__topic__logo>*+* {
+    margin-left: 5px
 }
 
 .navbar__list {
@@ -64,21 +67,26 @@ import Button from "./Buttons/Button.vue";
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+}
+
+.navbar__list>*+* {
+    margin-top: 20px
 }
 
 .btn__container {
     margin-top: 20px;
     display: flex;
     flex-direction: column;
-    gap: 14px;
+}
+
+.btn__container>*+* {
+    margin-top: 14px
 }
 
 .btn-arrow {
     display: flex;
     align-items: baseline;
     justify-content: center;
-    gap: 13px;
     padding: 8px 15px;
     border-radius: 5px;
     background: #3b0cfa;
@@ -87,5 +95,9 @@ import Button from "./Buttons/Button.vue";
     font-size: 15px;
     line-height: 18px;
     color: #ffffff;
+}
+
+.btn-arrow>*+* {
+    margin-left: 13px
 }
 </style>

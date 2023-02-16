@@ -6,7 +6,7 @@
             <div class="form__item" v-for="item in Inputs">
                 <img src="/images/date/key.svg" alt="">
                 <input :type="item.typeInput" :placeholder="item.title" class="dark--medium">
-                <img :src="item.typeInput == 'password' ? '/images/date/blind.svg' : '/images/date/blind.svg'" alt=""
+                <img :src="item.typeInput == 'password' ? '/images/date/blind.svg' : '/images/date/no-blind.svg'" alt=""
                     @click="changeInput(item.id)">
             </div>
 
@@ -53,14 +53,20 @@ const Inputs = ref(
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+}
+
+.date__main>*+* {
+    margin-top: 20px
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
     width: 324px;
+}
+
+.form>*+* {
+    margin-top: 8px
 }
 
 .form__item {
@@ -69,10 +75,13 @@ const Inputs = ref(
     display: flex;
     justify-content: space-between;
     align-items: center;
-    gap: 13px;
     background: #FFFFFF;
     border-radius: 5px;
     height: 36px;
+}
+
+.form__item>*+* {
+    margin-left: 13px
 }
 
 .form__item img {

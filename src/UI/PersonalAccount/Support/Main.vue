@@ -14,10 +14,16 @@
                 <span class="violet--medium">Telegram</span>
                 <img src="/images/support/arrow.svg" alt="">
             </div>
-            <div class="question">
-                <span class="violet--medium">autodesigner@mail.ru</span>
-                <img src="/images/support/arrow.svg" alt="">
+            <div class="question--mail">
+                <div class="question" @click="doCopy()">
+                    <span class="violet--medium">autodesigner@mail.ru</span>
+                    <img src="/images/support/copy.svg" alt="" class="copy_icon">
+                </div>
+                <div class="mail-copy__block" v-if="copyDisplay == 1">
+                    <span class="mail-copy__block__text">Скопировано!</span>
+                </div>
             </div>
+
         </div>
         <div class="support__form">
             <span class="black--semibold">Написать обращение</span>
@@ -30,9 +36,62 @@
 
 <script setup>
 import Button from '@/UI/Buttons/Button.vue';
+import { ref } from 'vue';
+import { copyText } from 'vue3-clipboard'
+
+function doCopy() {
+    copyText('autodesigner@mail.ru', undefined, (error, event) => {
+        if (error) {
+            alert('Can not copy')
+        } else {
+            console.log('Copied')
+            copyDisplay.value = 1
+            setTimeout(() => {
+                copyDisplay.value = 0
+            }, 2000)
+        }
+    })
+}
+
+const copyDisplay = ref(0)
 </script>
 
 <style scoped>
+.question--mail {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+    height: 13px;
+}
+
+.mail-copy__block {
+    padding: 2px 15px 3px 15px;
+    background: #3B0CFA;
+    border-radius: 5px;
+    animation: animateCopy 3s ease-in;
+}
+
+@keyframes animateCopy {
+    0% {
+        opacity: 1;
+    }
+
+    100% {
+        opacity: 0;
+    }
+}
+
+.mail-copy__block__text {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 11px;
+    color: #FFFFFF;
+}
+
+.copy_icon {
+    height: 15px;
+}
+
 .support__main {
     display: flex;
     flex-direction: column;
@@ -46,10 +105,15 @@ import Button from '@/UI/Buttons/Button.vue';
 }
 
 .questions {
+    margin-left: 140px;
+    width: 393px;
     margin-top: 23px;
     display: flex;
     flex-direction: column;
-    gap: 10px;
+}
+
+.questions>*+* {
+    margin-top: 10px
 }
 
 .question {
@@ -65,7 +129,10 @@ import Button from '@/UI/Buttons/Button.vue';
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 10px;
+}
+
+.support__form>*+* {
+    margin-top: 10px
 }
 
 .support__textarea {

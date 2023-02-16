@@ -8,7 +8,7 @@
         <div class="list">
             <div class="item item__add" @click="SetCardModal()">
                 <img src="/images/payment/plus.svg" alt="">
-                <span class="white--medium">Добавить карту</span>
+                <span class="white--medium add-card__span">Добавить карту</span>
             </div>
             <div class="item item__req" v-for="card in Cards">
                 <div class="item__req__inner">
@@ -27,6 +27,8 @@
 <script setup>
 import { ref, defineEmits } from 'vue';
 import AddCardModal from './AddCardModal.vue';
+
+
 
 const CardModal = ref(0)
 
@@ -70,18 +72,27 @@ const Cards = ref(
 </script>
 
 <style scoped>
+.add-card__span {
+    width: 90px;
+}
+
 .payment__main {
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
 }
+
+
 
 .list {
     display: flex;
     flex-wrap: wrap;
     justify-content: center;
-    gap: 20px;
+}
+
+.list>*+* {
+    margin-left: 20px;
+    margin-top: 20px;
 }
 
 .item {
@@ -91,12 +102,16 @@ const Cards = ref(
 }
 
 .item__add {
+    margin-top: 20px;
     cursor: pointer;
     padding: 12px 15px;
     display: flex;
     flex-direction: column;
-    gap: 12px;
     background: #3B0CFA;
+}
+
+.item__add>*+* {
+    margin-top: 12px
 }
 
 .item__add img {

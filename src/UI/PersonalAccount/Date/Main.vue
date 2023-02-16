@@ -29,24 +29,33 @@ import Button from '@/UI/Buttons/Button.vue';
     display: flex;
     flex-direction: column;
     align-items: center;
-    gap: 20px;
+}
+
+.date__main>*+* {
+    margin-top: 20px
 }
 
 .form {
     display: flex;
     flex-direction: column;
-    gap: 8px;
     width: 324px;
+}
+
+.form>*+* {
+    margin-top: 8px
 }
 
 .form__item {
     padding-left: 15px;
     display: flex;
     align-items: center;
-    gap: 13px;
     background: #FFFFFF;
     border-radius: 5px;
     height: 36px;
+}
+
+.form__item>*+* {
+    margin-left: 13px
 }
 
 input {
