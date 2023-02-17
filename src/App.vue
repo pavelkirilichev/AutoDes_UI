@@ -1,11 +1,5 @@
 <template>
-  <div class="main">
-    <NavBar />
-    <div class="main__center">
-      <ModalFree />
-    </div>
-    <Footer />
-</div>
+  <Constructor />
 </template>
 
 <script setup>
@@ -18,6 +12,7 @@ import FooterMob from "./UI/FooterMob.vue";
 import NavBar from "./UI/NavBar.vue";
 import ModalCash from "./UI/PersonalAccount/Payment/ModalCash.vue";
 import ModalFree from "./UI/PersonalAccount/Payment/ModalFree.vue";
+import Constructor from "./UI/Constructor/Main.vue"
 </script>
 
 <style>
