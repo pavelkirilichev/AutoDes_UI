@@ -52,6 +52,8 @@
 
 <style scoped>
 .navbar {
+    z-index: 2;
+    position: fixed;
     display: flex;
     align-items: center;
     justify-content: space-between;
