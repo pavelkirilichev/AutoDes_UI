@@ -29,9 +29,11 @@
             </div>
             <div class="bg-choise">
                 <span class="dark--medium">Выбор фона</span>
-                <div v-masonry transition-duration="0.3s" item-selector=".item" column-width=".item">
+                <div v-masonry transition-duration="0.3s" item-selector=".item" column-width=".item" gutter="10">
                     <img v-masonry-tile class="item" :src="`/images/constructor/sidebar_menu/bg/image_${n}.png`" alt=""
-                        v-for="n in 8" :key="n">
+                        v-for="n in 7" :key="n">
+                    <img v-masonry-tile class="item" column-width="234"
+                        :src="`/images/constructor/sidebar_menu/bg/image_8.png`" alt="">
                 </div>
 
             </div>
@@ -43,8 +45,14 @@
 <script setup></script>
 <style scoped>
 .item {
-    width: 50%;
+    margin-bottom: 5px;
+    width: calc(50% - 10px);
 }
+
+.item:last-child {
+    width: 100%;
+}
+
 .image__item {
     cursor: pointer;
     width: 115px;
