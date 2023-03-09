@@ -33,7 +33,10 @@ textarea {
 
   resize: none;
 }
-
+.logo-main {
+  width: 37px !important;
+  height: 37px !important;
+}
 .main {
   display: flex;
   flex-direction: column;

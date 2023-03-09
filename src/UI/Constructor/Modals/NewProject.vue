@@ -115,7 +115,6 @@ import Button from '@/UI/Buttons/Button.vue';
     right: -160px;
     top: 50px;
     width: 280px;
-    height: 156px;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;

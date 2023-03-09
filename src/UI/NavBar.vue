@@ -3,7 +3,7 @@
         <nav class="navbar">
             <ul class="navbar__left">
                 <li class="logo__block">
-                    <img src="/images/logo.svg" alt="">
+                    <img src="/images/logo.svg" alt="" class="logo-main">
                     <span class="item__text text__logo">Autodesigner</span>
                 </li>
                 <li>
@@ -36,10 +36,12 @@ import Button from "./Buttons/Button.vue";
 </script>
 
 <style scoped>
+
 .header {
     display: flex;
     justify-content: center;
-    width: calc(100% - 20px);
+    width: 100%;
+    padding: 0 10px;
     position: fixed;
     background: #F5F5F7;
 }
