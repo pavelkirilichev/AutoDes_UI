@@ -29,7 +29,7 @@
             </div>
             <div class="bg-choise">
                 <span class="dark--medium">Выбор фона</span>
-                <div v-masonry transition-duration="0.3s" item-selector=".item" fit-width="234">
+                <div v-masonry transition-duration="0.3s" item-selector=".item" column-width=".item">
                     <img v-masonry-tile class="item" :src="`/images/constructor/sidebar_menu/bg/image_${n}.png`" alt=""
                         v-for="n in 8" :key="n">
                 </div>
@@ -40,10 +40,11 @@
     </div>
 </template>
 
-<script setup>
-import VueMasonry from 'vue-masonry-css'
-</script>
+<script setup></script>
 <style scoped>
+.item {
+    width: 50%;
+}
 .image__item {
     cursor: pointer;
     width: 115px;
