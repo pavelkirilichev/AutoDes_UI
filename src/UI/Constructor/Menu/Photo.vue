@@ -79,6 +79,7 @@
 }
 
 .styles {
+    cursor: pointer;
     width: 234px;
     height: 58px;
     background: #FFFFFF;
@@ -95,7 +96,7 @@
     background-repeat: no-repeat;
 }
 
-.styles--active {
+.styles:hover {
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
 }
 

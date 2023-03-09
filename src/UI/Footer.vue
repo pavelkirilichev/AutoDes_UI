@@ -2,7 +2,7 @@
     <footer class="footer">
         <div class="footer__list-item-left">
             <div class="logo__block">
-                <img src="/images/logo.svg" alt="">
+                <img src="/images/logo.svg" alt="" class="logo-main">
                 <span class="item__text text__logo">Autodesigner</span>
             </div>
             <p class="dark--medium">

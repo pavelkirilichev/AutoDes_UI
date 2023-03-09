@@ -43,6 +43,7 @@
 <script setup></script>
 <style scoped>
 .item {
+    cursor: pointer;
     margin-bottom: 5px;
     width: calc(50% - 10px);
 }

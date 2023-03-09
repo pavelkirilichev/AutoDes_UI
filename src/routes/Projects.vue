@@ -3,7 +3,6 @@
         <NavBar />
         <div class="main__center">
             <div class="projects">
-                <DeleteModal />
                 <div class="projects_header">
                     <img src="/images/project/left.svg" />
                     <span>Абобус диджитал</span>

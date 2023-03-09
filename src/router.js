@@ -3,6 +3,7 @@ import LK from "./routes/LK";
 import Constructor from "./routes/Constructor";
 import ConstructorModal from "./routes/ConstructorModal";
 import Projects from "./routes/Projects";
+import LK_Modal from "./routes/LK_Modal";
 
 const routes = [
   {
@@ -24,6 +25,11 @@ const routes = [
     path: "/projects",
     name: "Projects",
     component: Projects,
+  },
+  {
+    path: "/lk_modal",
+    name: "LK_Modal",
+    component: LK_Modal,
   },
 ];
 

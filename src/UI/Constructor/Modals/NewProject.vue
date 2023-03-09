@@ -18,7 +18,9 @@
                             или
                             <span class="violet--semibold">Всё и Сразу</span> для ее использования
                         </span>
-                        <Button color="blue">Сменить тариф</Button>
+                        <button class="lock-btn">
+                            <span>Сменить тариф</span>
+                        </button>
                     </div>
                 </div>
                 <div class="parametrs">
@@ -115,7 +117,6 @@ import Button from '@/UI/Buttons/Button.vue';
     right: -160px;
     top: 50px;
     width: 280px;
-    height: 156px;
     background: #FFFFFF;
     box-shadow: 0px 0px 4px rgba(0, 0, 0, 0.25);
     border-radius: 10px;
@@ -125,11 +126,24 @@ import Button from '@/UI/Buttons/Button.vue';
     width: 100%;
 }
 
-.lock-message button {
-    width: 154px;
+.lock-btn {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: auto !important;
     height: 34px;
     background: #3B0CFA;
     border-radius: 10px;
+    padding: 0 15px;
+}
+
+.lock-btn span {
+    font-family: 'Montserrat';
+    font-weight: 500;
+    font-size: 15px;
+    line-height: 18px;
+    color: #ffffff;
+    white-space: nowrap;
 }
 
 .lock-message>*+* {
