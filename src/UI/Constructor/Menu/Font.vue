@@ -131,6 +131,7 @@
 }
 
 .search__font {
+    width: 170px;
     height: 18px;
 }
 

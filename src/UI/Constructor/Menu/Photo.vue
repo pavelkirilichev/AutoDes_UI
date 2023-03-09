@@ -6,62 +6,65 @@
         </div>
         <div class="category">
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img"
+                    style="background-image: url(/images/constructor/sidebar_menu/photo/business.svg);">
                 </div>
                 <span class="dark--medium">Бизнес и финансы</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/photo/map.svg);">
                 </div>
                 <span class="dark--medium">Страны</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/photo/nature.svg);">
                 </div>
                 <span class="dark--medium">Природа</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/photo/people.svg);">
                 </div>
                 <span class="dark--medium">Люди</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/photo/beauty.svg);">
                 </div>
                 <span class="dark--medium">Красота и здоровье</span>
             </div>
             <div class="styles styles--active">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/photo/science.svg);">
                 </div>
                 <span class="dark--medium">Наука</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/photo/space.svg);">
                 </div>
                 <span class="dark--medium">Космос</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/photo/city.svg);">
                 </div>
                 <span class="dark--medium">Город</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/photo/animals.svg);">
                 </div>
                 <span class="dark--medium">Животные</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/photo/art.svg);">
                 </div>
                 <span class="dark--medium">Искусство</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img"
+                    style="background-image: url(/images/constructor/sidebar_menu/photo/mysticism.svg);">
                 </div>
                 <span class="dark--medium">Мистика</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img"
+                    style="background-image: url(/images/constructor/sidebar_menu/photo/interior.svg);">
                 </div>
                 <span class="dark--medium">Дом и интерьер</span>
             </div>
@@ -101,6 +104,7 @@
 }
 
 .search__font {
+    width: 170px;
     height: 18px;
 }
 

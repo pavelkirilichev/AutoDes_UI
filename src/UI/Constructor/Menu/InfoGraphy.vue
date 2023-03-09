@@ -6,22 +6,26 @@
         </div>
         <div class="category">
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img"
+                    style="background-image: url(/images/constructor/sidebar_menu/graphics/tables.svg);">
                 </div>
                 <span class="dark--medium">Таблицы</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img"
+                    style="background-image: url(/images/constructor/sidebar_menu/graphics/charts.svg);">
                 </div>
                 <span class="dark--medium">Графики</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img"
+                    style="background-image: url(/images/constructor/sidebar_menu/graphics/funnel.svg);">
                 </div>
                 <span class="dark--medium">Воронка</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img"
+                    style="background-image: url(/images/constructor/sidebar_menu/graphics/roadmap.svg);">
                 </div>
                 <span class="dark--medium">Roadmap</span>
             </div>
@@ -61,6 +65,7 @@
 }
 
 .search__font {
+    width: 170px;
     height: 18px;
 }
 
@@ -93,5 +98,4 @@
     background: #FFFFFF;
     border: 1.3px solid #3B0CFA;
     border-radius: 5px;
-}
-</style>
+}</style>

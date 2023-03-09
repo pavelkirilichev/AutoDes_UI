@@ -11,17 +11,20 @@
                 <span class="dark--medium">Иконки</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img"
+                    style="background-image: url(/images/constructor/sidebar_menu/elements/graphics.svg);">
                 </div>
                 <span class="dark--medium">3д графика</span>
             </div>
             <div class="styles styles--active">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img"
+                    style="background-image: url(/images/constructor/sidebar_menu/elements/geometry.svg);">
                 </div>
                 <span class="dark--medium">Геометрия</span>
             </div>
             <div class="styles">
-                <div class="styles__img" style="background-image: url(/images/constructor/sidebar_menu/elements/cubs.svg);">
+                <div class="styles__img"
+                    style="background-image: url(/images/constructor/sidebar_menu/elements/illustrations.svg);">
                 </div>
                 <span class="dark--medium">Иллюстрации</span>
             </div>
@@ -135,6 +138,7 @@
 }
 
 .search__font {
+    width: 170px;
     height: 18px;
 }
 
@@ -167,5 +171,4 @@
     background: #FFFFFF;
     border: 1.3px solid #3B0CFA;
     border-radius: 5px;
-}
-</style>
+}</style>

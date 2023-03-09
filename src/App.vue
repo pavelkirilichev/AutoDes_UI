@@ -1,20 +1,6 @@
 <template>
-  <Constructor />
+  <router-view />
 </template>
-
-<script setup>
-
-import Footer from "./UI/Footer.vue";
-import Main from "./UI/PersonalAccount/Main.vue";
-import ModalAuth from "./UI/Modals/ModalAuth.vue"
-import NavbarMob from "./UI/NavbarMob.vue";
-import FooterMob from "./UI/FooterMob.vue";
-import NavBar from "./UI/NavBar.vue";
-import ModalCash from "./UI/PersonalAccount/Payment/ModalCash.vue";
-import ModalFree from "./UI/PersonalAccount/Payment/ModalFree.vue";
-import Constructor from "./UI/Constructor/Main.vue"
-</script>
-
 <style>
 * {
   box-sizing: border-box;
@@ -178,5 +164,19 @@ textarea {
 input {
   border: none;
   outline: none;
+}
+
+*::-webkit-scrollbar {
+  width: 12px;
+}
+
+*::-webkit-scrollbar-track {
+  background: #F7F7FF;
+}
+
+*::-webkit-scrollbar-thumb {
+  background-color: #3B0CFA;
+  border-radius: 20px;
+  border: 3px solid #F7F7FF;
 }
 </style>

@@ -10,11 +10,14 @@
   "dependencies": {
     "@rushstack/eslint-patch": "^1.2.0",
     "@vue/eslint-config-prettier": "^7.0.0",
+    "@yeger/vue-masonry-wall": "^3.4.4",
     "core-js": "^3.8.3",
+    "masonry-layout": "^4.2.2",
     "sass": "^1.57.1",
     "sass-loader": "^13.2.0",
     "vue": "^3.2.13",
-    "vue-router": "^4.1.6",
+    "vue-masonry": "^0.16.0",
+    "vue-router": "^4.0.13",
     "vue3-clipboard": "^1.0.0"
   },
   "devDependencies": {
@@ -24,7 +27,8 @@
     "@vue/cli-plugin-eslint": "~5.0.0",
     "@vue/cli-service": "~5.0.0",
     "eslint": "^7.32.0",
-    "eslint-plugin-vue": "^8.0.3"
+    "eslint-plugin-vue": "^8.0.3",
+    "vue-masonry-css": "^1.0.3"
   },
   "browserslist": [
     "> 1%",

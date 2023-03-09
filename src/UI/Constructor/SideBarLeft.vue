@@ -57,13 +57,13 @@ const chapterSelect = computed(() => {
 })
 
 function getClass(id) {
-    if (id == chapter.value) {
+    if (id == chapter.value.id) {
         return 'menu__item--active'
     }
-    if (id == chapter.value + 1) {
+    if (id == chapter.value.id + 1) {
         return 'menu__item--next'
     }
-    if (id == chapter.value - 1) {
+    if (id == chapter.value.id - 1) {
         return 'menu__item--prev'
     }
 }
@@ -172,8 +172,7 @@ const menu = [
 }
 
 .menu__item--active {
-    background: linear-gradient(269.74deg, #F6F6FF 0.19%, rgba(246, 246, 255, 0) 108.62%);
-
+    background: #F7F7FF;
 }
 
 .menu__item--prev {
