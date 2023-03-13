@@ -2,7 +2,7 @@
     <div class="modal__section">
         <div class="modal">
             <span class="title">
-                Действительно хотите приобрести <br />
+                Действительно хотите попробовать <br />
                 тариф «Презентации»?
             </span>
             <span class="dark--medium align--center">Вы можете попробовать использовать данный тариф <br /> 7 дней
@@ -15,7 +15,7 @@
             </div>
             <span class="grey--medium no-sale">А после составит 399 ₽/мес </span>
         </div>
-</div>
+    </div>
 </template>
 
 <script setup>
