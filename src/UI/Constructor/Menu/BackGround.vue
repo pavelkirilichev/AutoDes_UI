@@ -28,14 +28,17 @@
                 </div>
             </div>
             <div class="bg-choise">
-                <span class="dark--medium">Выбор фона</span>
+                <span class="dark--medium">Вертикальные фоны</span>
                 <div v-masonry transition-duration="0.3s" item-selector=".item" column-width=".item" gutter="10">
-                    <img v-masonry-tile class="item" :src="`/images/constructor/sidebar_menu/bg/image_${n}.png`" alt=""
-                        v-for="n in 8" :key="n">
+                    <img v-masonry-tile class="item" :src="`/images/constructor/sidebar_menu/bg/image_4.png`" alt=""
+                        v-for="n in 4" :key="n">
                 </div>
-
+                <span class="dark--medium">Горизонтальные фоны</span>
+                <div v-masonry transition-duration="0.3s" item-selector=".item--long" column-width=".item--long">
+                    <img v-masonry-tile class="item--long" :src="`/images/constructor/sidebar_menu/bg/image_8.png`" alt=""
+                        v-for="n in 4" :key="n">
+                </div>
             </div>
-
         </div>
     </div>
 </template>
@@ -46,6 +49,12 @@
     cursor: pointer;
     margin-bottom: 5px;
     width: calc(50% - 10px);
+}
+
+.item--long {
+    cursor: pointer;
+    margin-bottom: 5px;
+    width: 100%;
 }
 
 

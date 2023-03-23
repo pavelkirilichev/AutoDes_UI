@@ -9,8 +9,8 @@
                     </button>
                     <button class="create__presentation" disable="disabled">
                         <span>Создать презентацию</span>
+                        <img src="/images/new_project/save.svg" />
                     </button>
-                    <img src="/images/new_project/save.svg" />
                     <div class="lock-message">
                         <span class="black--medium">
                             Кажется, эта функция не входит в ваш тариф. Смените тариф на
@@ -108,8 +108,16 @@
 import Button from '@/UI/Buttons/Button.vue';
 </script>
 <style scoped>
-.lock-message {
+.create__presentation:hover+.lock-message {
     display: flex;
+}
+
+.lock-message:hover {
+    display: flex;
+}
+
+.lock-message {
+    display: none;
     flex-direction: column;
     align-items: center;
     padding: 10px;

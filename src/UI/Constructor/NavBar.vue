@@ -6,21 +6,15 @@
 				<img src="/images/logo.svg" alt="" class="logo-main" />
 				<span class="item__text text__logo">Autodesigner</span>
 			</div>
-			<div
-				:class="NavType == 0 ? 'change-save' : 'change-save change-save--line'"
-			>
+			<div :class="NavType == 0 ? 'change-save' : 'change-save change-save--line'">
 				<img src="/images/constructor/navbar/cloud.svg" alt="" />
 				<span class="dark--medium">Изменения сохранены</span>
 			</div>
-			<div class="font-menu" v-if="NavType == 0">
+			<div class="hide-section" v-if="HideStatus == 1">
 				<div class="font-select name">
 					<span class="black--medium">Montserrat</span>
 					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
-					<div
-						:class="
-							fontSlide == 1 ? 'menu__slide menu__slide--active' : 'menu__slide'
-						"
-					>
+					<div class="menu__slide">
 						<div class="menu__slide__inner">
 							<div class="menu__slide__item">
 								<span>Times New Roman</span>
@@ -40,12 +34,53 @@
 				<div class="font-select count">
 					<span class="black--medium">24</span>
 					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
-					<div
-						class="menu__slide--size"
-						:class="
-							sizeSlide == 1 ? 'menu__slide menu__slide--active' : 'menu__slide'
-						"
-					>
+					<div class="menu__slide menu__slide--size">
+						<div class="menu__slide__inner">
+							<div class="menu__slide__item">
+								<span>10</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>12</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>14</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>16</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>20</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>24</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="font-select name">
+					<span class="black--medium">Montserrat</span>
+					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
+					<div class="menu__slide">
+						<div class="menu__slide__inner">
+							<div class="menu__slide__item">
+								<span>Times New Roman</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>Montserrat</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>HeadlandOne</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>Gilroy</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="font-select count">
+					<span class="black--medium">24</span>
+					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
+					<div class="menu__slide menu__slide--size">
 						<div class="menu__slide__inner">
 							<div class="menu__slide__item">
 								<span>10</span>
@@ -82,38 +117,119 @@
 					<img src="/images/constructor/navbar/font_align.svg" alt="" />
 				</div>
 			</div>
-			<div class="font-menu" v-if="NavType == 2">
-				<div class="color-select">
-					<img src="/images/constructor/navbar/fill.svg" alt="" />
-					<div
-						class="color-select__choise"
-						style="background-color: #9e73ee"
-					></div>
+			<div class="font-menu" v-if="NavType == 0">
+
+				<div class="font-select name">
+					<span class="black--medium">Montserrat</span>
+					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
+					<div class="menu__slide">
+						<div class="menu__slide__inner">
+							<div class="menu__slide__item">
+								<span>Times New Roman</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>Montserrat</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>HeadlandOne</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>Gilroy</span>
+							</div>
+						</div>
+					</div>
 				</div>
-				<div class="color-select">
-					<img src="/images/constructor/navbar/edit_color.svg" alt="" />
-					<div
-						class="color-select__choise"
-						style="background-color: #ff0099"
-					></div>
+				<div class="font-select count">
+					<span class="black--medium">24</span>
+					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
+					<div class="menu__slide menu__slide--size">
+						<div class="menu__slide__inner">
+							<div class="menu__slide__item">
+								<span>10</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>12</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>14</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>16</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>20</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>24</span>
+							</div>
+						</div>
+					</div>
 				</div>
-                <div class="graph-select">
-                    <img src="/images/constructor/navbar/fat.svg" alt="">
-                    <img src="/images/constructor/navbar/arrow_down.svg" alt="">
-                </div>
-                <div class="graph-select">
-                    <img src="/images/constructor/navbar/line_type.svg" alt="">
-                    <img src="/images/constructor/navbar/arrow_down.svg" alt="">
-                </div>
-                <div class="graph-select">
-                    <img src="/images/constructor/navbar/rotate_orientation.svg" alt="">
-                    <img src="/images/constructor/navbar/arrow_down.svg" alt="">
-                </div>
-                <div class="graph-select">
-                    <img src="/images/constructor/navbar/rotate_gradus.svg" alt="">
-                    <img src="/images/constructor/navbar/arrow_down.svg" alt="">
-                </div>
+				<div class="font-select name">
+					<span class="black--medium">Montserrat</span>
+					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
+					<div class="menu__slide">
+						<div class="menu__slide__inner">
+							<div class="menu__slide__item">
+								<span>Times New Roman</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>Montserrat</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>HeadlandOne</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>Gilroy</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="font-select count">
+					<span class="black--medium">24</span>
+					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
+					<div class="menu__slide menu__slide--size">
+						<div class="menu__slide__inner">
+							<div class="menu__slide__item">
+								<span>10</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>12</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>14</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>16</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>20</span>
+							</div>
+							<div class="menu__slide__item">
+								<span>24</span>
+							</div>
+						</div>
+					</div>
+				</div>
+				<div class="font-color" style="background: #9e73ee"></div>
+				<div class="font-options">
+					<span class="font__option-text">B</span>
+				</div>
+				<div class="font-options">
+					<span class="font__option-text">/</span>
+				</div>
+				<div class="font-options">
+					<span class="font__option-text underline">U</span>
+				</div>
+				<div class="font-options">
+					<img src="/images/constructor/navbar/font_align.svg" alt="" />
+				</div>
+
 			</div>
+			<div class="font-options" id="hide-icon" v-if="NavType == 0" @click="hideStatusChange()">
+				<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
+			</div>
+			<GraphPart v-if="NavType == 2" />
 			<div class="arrows" v-if="NavType == 1">
 				<img src="/images/constructor/navbar/arrow_left.svg" alt="" />
 				<img src="/images/constructor/navbar/arrow_right.svg" alt="" />
@@ -141,29 +257,68 @@
 
 <script setup>
 import { ref } from "vue";
+import GraphPart from "./NavParts/Graph.vue"
 
-const NavType = ref(2);
+const NavType = ref(0);
+const HideStatus = ref(0)
+
+function hideStatusChange() {
+	if (HideStatus.value == 0) {
+		HideStatus.value = 1
+	}
+	else {
+		HideStatus.value = 0
+	}
+}
 </script>
 
 <style scoped>
-.graph-select {
-    cursor: pointer;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    width: 62px;
-    height: 32px;
-    background: #FFFFFF;
-    border-radius: 5px;
+.hide-section {
+	padding: 9px;
+	display: flex;
+	align-items: center;
+	position: absolute;
+	top: 82px;
+	left: 0;
+	height: 60px;
+	background: #eaeaff;
+	border-radius: 5px;
 }
-.graph-select > * + * {
+
+.hide-section>*+* {
 	margin-left: 10px;
 }
+
+#hide-icon {
+	display: none;
+}
+
+.hide-icon img {
+	margin-top: 4px;
+	width: 13px;
+}
+
+.graph-select {
+	cursor: pointer;
+	display: flex;
+	justify-content: center;
+	align-items: center;
+	width: 62px;
+	height: 32px;
+	background: #FFFFFF;
+	border-radius: 5px;
+}
+
+.graph-select>*+* {
+	margin-left: 10px;
+}
+
 .color-select__choise {
 	width: 32px;
 	height: 6px;
 	border-radius: 0px 0px 5px 5px;
 }
+
 .color-select {
 	cursor: pointer;
 	padding-top: 3px;
@@ -176,15 +331,17 @@ const NavType = ref(2);
 	background: #ffffff;
 	border-radius: 5px;
 }
+
 .color-select img {
 	width: 19px;
 	height: 19px;
 }
+
 .project-name {
 	cursor: pointer;
 }
 
-.project-name > * + * {
+.project-name>*+* {
 	margin-left: 17px;
 }
 
@@ -203,7 +360,7 @@ const NavType = ref(2);
 	cursor: pointer;
 }
 
-.arrows > * + * {
+.arrows>*+* {
 	margin-left: 18px;
 }
 
@@ -231,7 +388,7 @@ const NavType = ref(2);
 	align-items: center;
 }
 
-.logo__block > * + * {
+.logo__block>*+* {
 	margin-left: 5px;
 }
 
@@ -245,7 +402,7 @@ const NavType = ref(2);
 	align-items: center;
 }
 
-.change-save > * + * {
+.change-save>*+* {
 	margin-left: 11px;
 }
 
@@ -305,7 +462,7 @@ const NavType = ref(2);
 	align-items: center;
 }
 
-.font-menu > * + * {
+.font-menu>*+* {
 	margin-left: 10px;
 }
 
@@ -323,11 +480,11 @@ const NavType = ref(2);
 	display: flex;
 }
 
-.name > * + * {
+.name>*+* {
 	margin-left: 50px;
 }
 
-.count > * + * {
+.count>*+* {
 	margin-left: 17px;
 }
 
@@ -374,7 +531,7 @@ const NavType = ref(2);
 	border-radius: 10px;
 }
 
-.share > * + * {
+.share>*+* {
 	margin-left: 9px;
 }
 
@@ -397,39 +554,95 @@ const NavType = ref(2);
 	border-radius: 10px;
 }
 
-.projects > * + * {
+.projects>*+* {
 	margin-left: 10px;
 }
 
-@media (max-width: 1450px) {
-	.navbar {
-		padding: 0 15px 0 10px;
+.hide-section .font-select {
+	display: none;
+}
+
+.hide-section .font-color {
+	display: none;
+}
+
+.hide-section .font-options {
+	display: none;
+}
+
+@media (max-width: 1720px) {
+
+	.font-color,
+	.font-options {
+		display: none;
 	}
 
-	.change-save {
-		margin-left: 10px;
+	#hide-icon {
+		display: flex;
+		margin-left: 9px;
 	}
 
-	.change-save > * + * {
-		margin-left: 5px;
+	.hide-section .font-color {
+		display: flex;
 	}
 
-	.count > * + * {
-		margin-left: 8px;
+	.hide-section .font-options {
+		display: flex;
 	}
 }
 
-@media (max-width: 1335px) {
-	.change-save {
-		width: 130px;
-		margin-left: 12px;
+@media (max-width: 1560px) {
+
+	.font-select:nth-child(4) {
+		display: none;
 	}
 
-	.change-save > * + * {
+	.hide-section .font-select:nth-child(4) {
+		display: flex;
+	}
+}
+
+@media (max-width: 1480px) {
+	.font-select:nth-child(3) {
+		display: none;
+	}
+
+	.hide-section .font-select:nth-child(3) {
+		display: flex;
+	}
+}
+
+@media (max-width: 1240px) {
+	.font-select:nth-child(2) {
+		display: none;
+	}
+
+	.hide-section .font-select:nth-child(2) {
+		display: flex;
+	}
+}
+
+@media (max-width: 1170px) {
+	.font-select:nth-child(1) {
+		display: none;
+	}
+
+	.hide-section .font-select:nth-child(1) {
+		display: flex;
+	}
+
+	.navbar {
+		padding: 0 10px;
+	}
+}
+
+
+@media (max-width: 1335px) {
+	.change-save>*+* {
 		margin-left: 7px;
 	}
 
-	.count > * + * {
+	.count>*+* {
 		margin-left: 8px;
 	}
 
