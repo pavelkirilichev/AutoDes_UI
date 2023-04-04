@@ -10,115 +10,8 @@
 				<img src="/images/constructor/navbar/cloud.svg" alt="" />
 				<span class="dark--medium">Изменения сохранены</span>
 			</div>
-			<div class="hide-section" v-if="HideStatus == 1">
-				<div class="font-select name">
-					<span class="black--medium">Montserrat</span>
-					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
-					<div class="menu__slide">
-						<div class="menu__slide__inner">
-							<div class="menu__slide__item">
-								<span>Times New Roman</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>Montserrat</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>HeadlandOne</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>Gilroy</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="font-select count">
-					<span class="black--medium">24</span>
-					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
-					<div class="menu__slide menu__slide--size">
-						<div class="menu__slide__inner">
-							<div class="menu__slide__item">
-								<span>10</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>12</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>14</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>16</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>20</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>24</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="font-select name">
-					<span class="black--medium">Montserrat</span>
-					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
-					<div class="menu__slide">
-						<div class="menu__slide__inner">
-							<div class="menu__slide__item">
-								<span>Times New Roman</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>Montserrat</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>HeadlandOne</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>Gilroy</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="font-select count">
-					<span class="black--medium">24</span>
-					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
-					<div class="menu__slide menu__slide--size">
-						<div class="menu__slide__inner">
-							<div class="menu__slide__item">
-								<span>10</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>12</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>14</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>16</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>20</span>
-							</div>
-							<div class="menu__slide__item">
-								<span>24</span>
-							</div>
-						</div>
-					</div>
-				</div>
-				<div class="font-color" style="background: #9e73ee"></div>
-				<div class="font-options">
-					<span class="font__option-text">B</span>
-				</div>
-				<div class="font-options">
-					<span class="font__option-text">/</span>
-				</div>
-				<div class="font-options">
-					<span class="font__option-text underline">U</span>
-				</div>
-				<div class="font-options">
-					<img src="/images/constructor/navbar/font_align.svg" alt="" />
-				</div>
-			</div>
-			<div class="font-menu" v-if="NavType == 0">
 
+			<div class="font-menu" v-if="NavType == 0">
 				<div class="font-select name">
 					<span class="black--medium">Montserrat</span>
 					<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
@@ -228,6 +121,113 @@
 			</div>
 			<div class="font-options" id="hide-icon" v-if="NavType == 0" @click="hideStatusChange()">
 				<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
+				<div class="hide-section" v-if="HideStatus == 1">
+					<div class="font-select name">
+						<span class="black--medium">Montserrat</span>
+						<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
+						<div class="menu__slide">
+							<div class="menu__slide__inner">
+								<div class="menu__slide__item">
+									<span>Times New Roman</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>Montserrat</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>HeadlandOne</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>Gilroy</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="font-select count">
+						<span class="black--medium">24</span>
+						<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
+						<div class="menu__slide menu__slide--size">
+							<div class="menu__slide__inner">
+								<div class="menu__slide__item">
+									<span>10</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>12</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>14</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>16</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>20</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>24</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="font-select name">
+						<span class="black--medium">Montserrat</span>
+						<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
+						<div class="menu__slide">
+							<div class="menu__slide__inner">
+								<div class="menu__slide__item">
+									<span>Times New Roman</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>Montserrat</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>HeadlandOne</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>Gilroy</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="font-select count">
+						<span class="black--medium">24</span>
+						<img src="/images/constructor/navbar/arrow_down.svg" alt="" />
+						<div class="menu__slide menu__slide--size">
+							<div class="menu__slide__inner">
+								<div class="menu__slide__item">
+									<span>10</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>12</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>14</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>16</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>20</span>
+								</div>
+								<div class="menu__slide__item">
+									<span>24</span>
+								</div>
+							</div>
+						</div>
+					</div>
+					<div class="font-color" style="background: #9e73ee"></div>
+					<div class="font-options">
+						<span class="font__option-text">B</span>
+					</div>
+					<div class="font-options">
+						<span class="font__option-text">/</span>
+					</div>
+					<div class="font-options">
+						<span class="font__option-text underline">U</span>
+					</div>
+					<div class="font-options">
+						<img src="/images/constructor/navbar/font_align.svg" alt="" />
+					</div>
+				</div>
 			</div>
 			<GraphPart v-if="NavType == 2" />
 			<div class="arrows" v-if="NavType == 1">
@@ -279,7 +279,6 @@ function hideStatusChange() {
 	align-items: center;
 	position: absolute;
 	top: 82px;
-	left: 0;
 	height: 60px;
 	background: #eaeaff;
 	border-radius: 5px;
