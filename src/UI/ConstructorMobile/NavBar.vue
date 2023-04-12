@@ -17,7 +17,7 @@
                     <div class="select-menu select-menu--fat">
                         <div class="select-menu__inner select-menu__inner--fat">
                             <span class="dark--medium">Выберите жирность обводки</span>
-                            <vue-slider class="slider" v-model="value" min="6" max="96" dotSize="13" height="3px"
+                            <vue-slider class="slider" v-model="value" min="6" max="96" dotSize="18" height="3px"
                                 tooltip="none" :railStyle="{
                                     background: '#878D94'
                                 }" :processStyle="{
@@ -142,6 +142,7 @@ function changeHide(is_long) {
     -ms-overflow-style: none;
     /* Internet Explorer 10+ */
     scrollbar-width: none;
+    background-color: rgba(0, 0, 0, 0);
 }
 
 
