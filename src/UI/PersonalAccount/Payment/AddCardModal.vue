@@ -5,8 +5,8 @@
             <div class="card__form">
                 <div class="card__row">
                     <div class="form__item">
-                        <input v-model="cardNumber" @input="formatCardNumber" type="text"
-                            class="form__input dark--medium" placeholder="Номер карты" />
+                        <input v-model="cardNumber" @input="formatCardNumber" type="text" class="form__input dark--medium"
+                            placeholder="Номер карты" />
                     </div>
                     <div class="form__item">
                         <input v-model="cardDate" @input="formatCardDate" type="text" class="form__input dark--medium"
@@ -14,7 +14,7 @@
                     </div>
                 </div>
                 <div class="card__row">
-                    <span>Последние цифры на обороте карты<span class="red">*</span></span>
+                    <span>Цифры на обороте карты<span class="red">*</span></span>
                     <div class="form__item item__last">
                         <input v-model="cardCVV" @input="formatCardCVV" type="text" class="form__input dark--medium"
                             placeholder="CVV" />
@@ -192,5 +192,63 @@ const emit = defineEmits(['SetCardModal', 'addCard'])
 
 .btn__container button {
     border-radius: 10px !important;
+}
+
+@media (max-width: 1015px) {
+    .modal {
+        width: 100%;
+        max-width: 400px;
+        height: initial;
+    }
+
+    .btn__container {
+        flex-direction: column;
+    }
+
+    .btn__container button {
+        width: 100%;
+        border-radius: 5px !important;
+        height: 40px;
+    }
+
+    .btn__container>*+* {
+        margin-left: 0;
+        margin-top: 14px;
+    }
+
+    .card__row {
+        justify-content: space-between;
+    }
+
+    .card__row span {
+        font-size: 14px;
+        text-align: center;
+    }
+
+    .form__item:first-child {
+        width: 55%;
+    }
+
+    .form__item:last-child {
+        width: 75px;
+    }
+}
+
+@media (max-width: 365px) {
+
+    .form__item:last-child {
+        flex-shrink: 0;
+        width: 70px;
+    }
+
+    .card__row span {
+        font-size: 11px;
+        text-align: center;
+    }
+
+    .modal {
+        padding: 12.5px;
+    }
+
 }
 </style>

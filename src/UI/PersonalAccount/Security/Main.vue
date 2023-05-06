@@ -104,6 +104,7 @@ input::placeholder {
 }
 
 .support__btn {
-    border-radius: 10px;
+    border-radius: 5px;
+    width: 324px;
 }
 </style>

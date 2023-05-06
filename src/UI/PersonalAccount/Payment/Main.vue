@@ -145,4 +145,34 @@ const Cards = ref(
 .v-leave-to {
     opacity: 0;
 }
+
+@media (max-width: 1015px) {
+    .list {
+        margin-top: 20px;
+        justify-content: left;
+        flex-wrap: nowrap;
+        max-width: 90vw;
+        width: fit-content;
+        overflow-x: auto;
+        -ms-overflow-style: none;
+        scrollbar-width: none;
+    }
+
+    .item {
+        flex-shrink: 0;
+
+    }
+
+    .list::-webkit-scrollbar {
+        display: none;
+    }
+
+    .list>*+* {
+        margin-top: 0;
+    }
+
+    .item__add {
+        margin-top: 0;
+    }
+}
 </style>

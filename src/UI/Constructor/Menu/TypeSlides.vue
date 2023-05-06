@@ -38,7 +38,6 @@
         </div>
         <div class="forms">
             <div class="slides__forms">
-
             </div>
             <span>Пустой слайд</span>
         </div>

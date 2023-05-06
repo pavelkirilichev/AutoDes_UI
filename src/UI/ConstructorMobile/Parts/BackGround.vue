@@ -1,9 +1,5 @@
 <template>
     <div class="bg">
-        <div class="search">
-            <img src="/images/constructor/sidebar_menu/elements/look.svg" />
-            <input class="search__font dark--medium" placeholder="Поиск фона" />
-        </div>
         <div class="head">
             <span class="dark--medium">Загрузка</span>
             <div class="save">
@@ -16,7 +12,7 @@
                     <span class="violet--medium">Фото</span>
                 </button>
             </div>
-            <span class="dark--medium">Выбор цвета</span>
+            <span class="dark--medium change-color__span">Выбор цвета</span>
             <div class="color__menu">
                 <div class="color" style="background-color: #ffffff;">
                     <img src="/images/constructor/sidebar_menu/bg/palitra.svg" alt="">
@@ -29,15 +25,14 @@
                     <div class="color" style="background-color: #6732FF;"></div>
                 </div>
             </div>
+            <div class="search">
+                <img src="/images/constructor/sidebar_menu/elements/look.svg" />
+                <input class="search__font dark--medium" placeholder="Поиск фона" />
+            </div>
             <div class="bg-choise">
-                <span class="dark--medium">Вертикальные фоны</span>
+                <span class="dark--medium change-color__span">Выбор фона</span>
                 <div v-masonry transition-duration="0.3s" item-selector=".item" column-width=".item" gutter="10">
                     <img v-masonry-tile class="item" :src="`/images/constructor/sidebar_menu/bg/image_4.png`" alt=""
-                        v-for="n in 4" :key="n">
-                </div>
-                <span class="dark--medium">Горизонтальные фоны</span>
-                <div v-masonry transition-duration="0.3s" item-selector=".item--long" column-width=".item--long">
-                    <img v-masonry-tile class="item--long" :src="`/images/constructor/sidebar_menu/bg/image_8.png`" alt=""
                         v-for="n in 4" :key="n">
                 </div>
             </div>
@@ -47,10 +42,20 @@
 
 <script setup></script>
 <style scoped>
+.change-color__span {
+    margin-top: 20px !important;
+}
+
+.bg {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
 .item {
     cursor: pointer;
     margin-bottom: 5px;
-    width: calc(50% - 10px);
+    width: calc(50% - 5px);
 }
 
 .item--long {
@@ -94,6 +99,7 @@
 }
 
 .color__list {
+    margin-left: 18px;
     display: flex;
 }
 
@@ -113,10 +119,10 @@
 
 .color__menu {
     display: flex;
-    justify-content: space-between;
 }
 
 .upload-btn {
+    width: calc(50% - 7.125px);
     display: flex;
     justify-content: center;
     align-items: center;
@@ -132,9 +138,9 @@
 }
 
 .head {
+    width: 90%;
     display: flex;
     flex-direction: column;
-    margin-top: 20px;
 }
 
 .save {
@@ -153,6 +159,7 @@
 }
 
 .search {
+    margin-top: 20px;
     padding-left: 13px;
     display: flex;
     align-items: center;

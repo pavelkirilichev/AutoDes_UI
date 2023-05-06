@@ -29,21 +29,21 @@
                 <span class="dark--medium">Иллюстрации</span>
             </div>
         </div>
-        <div class="geometry_dash">
-            <div class="trigonometry trigonometry--active">
-                <img class=" rectangle" src="/images/constructor/sidebar_menu/elements/rectangle.svg">
+        <div class="elements-top">
+            <div class="trigonometry">
+                <img class="rectangle" src="/images/constructor/sidebar_menu/elements/rectangle.svg">
                 <span class="rectangle_size">Квадраты</span>
             </div>
             <div class="trigonometry">
-                <img class=" rectangle" src="/images/constructor/sidebar_menu/elements/triangle.svg">
+                <img class="rectangle" src="/images/constructor/sidebar_menu/elements/triangle.svg">
                 <span class="rectangle_size">Треугольники</span>
             </div>
             <div class="trigonometry">
-                <img class=" rectangle" src="/images/constructor/sidebar_menu/elements/circle.svg">
+                <img class="rectangle" src="/images/constructor/sidebar_menu/elements/circle.svg">
                 <span class="rectangle_size">Круги</span>
             </div>
             <div class="trigonometry">
-                <img class=" rectangle" src="/images/constructor/sidebar_menu/elements/polygon.svg">
+                <img class="rectangle" src="/images/constructor/sidebar_menu/elements/polygon.svg">
                 <span class="rectangle_size">Многоугольники</span>
             </div>
         </div>
@@ -74,7 +74,6 @@
     cursor: pointer;
     display: flex;
     align-items: center;
-    width: calc(50% - 5px);
     height: 87px;
     background: #FFFFFF;
     border-radius: 5px;
@@ -84,14 +83,6 @@
     box-shadow: 1px 1px 4px rgba(0, 0, 0, 0.25);
 }
 
-.trigonometry:nth-child(3) {
-    margin-left: 0;
-    margin-right: 0;
-}
-
-.trigonometry:nth-child(1) {
-    margin-top: 20px;
-}
 
 .geometry_dash {
     width: 90%;

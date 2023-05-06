@@ -47,11 +47,19 @@ export default {
 
 <style scoped>
 .menu__main {
+    max-width: 100vw;
     margin: 0 auto;
     display: flex;
     flex-direction: column;
     align-items: center;
     padding-bottom: 40px;
+    overflow-x: auto;
+    -ms-overflow-style: none;
+    scrollbar-width: none;
+}
+
+.menu__main::-webkit-scrollbar {
+    display: none;
 }
 
 
@@ -73,6 +81,28 @@ export default {
 .menu__item-active {
     background: #E2E2E2;
     border-radius: 5px;
+}
+
+@media (max-width: 1015px) {
+    .menu__row {
+        padding: 0 20px;
+        padding-top: 20px;
+        align-items: normal;
+        width: fit-content;
+    }
+
+    .menu__main {
+        padding-bottom: 25px;
+        align-items: normal;
+    }
+
+    .menu__item {
+        height: 40px;
+    }
+
+    .menu__item span {
+        white-space: nowrap;
+    }
 }
 </style>
 

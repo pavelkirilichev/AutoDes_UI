@@ -1,9 +1,5 @@
 <template>
     <div class="font">
-        <div class="search">
-            <img src="/images/constructor/sidebar_menu/elements/look.svg" />
-            <input class="search__font dark--medium" placeholder="Поиск шрифтов" />
-        </div>
         <div class="star">
             <img src="/images/constructor/sidebar_menu/templates/star.svg" />
             <span class="star_title">Избранные шрифты</span>
@@ -13,17 +9,20 @@
             <div class="add_second"> <span class="add_medium">Montserrat</span></div>
             <div class="add_third"><span class="add_little">Gilroy</span></div>
         </div>
+        <div class="search">
+            <img src="/images/constructor/sidebar_menu/elements/look.svg" />
+            <input class="search__font dark--medium" placeholder="Поиск шрифтов" />
+        </div>
+        <button class="upload-btn">
+            <img src="/images/constructor/sidebar_menu/font/upload.svg" />
+            <span class="violet--medium">Загрузить шрифт</span>
+        </button>
         <span class="star_title star_down">Мои шрифты</span>
         <div class="image">
             <div class="add_first"> <span class="add">Times New Roman</span></div>
             <div class="add_second"> <span class="add_medium">Montserrat</span></div>
             <div class="add_third"><span class="add_little">Gilroy</span></div>
         </div>
-        <button class="upload-btn">
-            <img src="/images/constructor/sidebar_menu/font/upload.svg" />
-            <span class="violet--medium">Загрузить шрифт</span>
-        </button>
-
     </div>
 </template>
 <style scoped>
@@ -32,6 +31,7 @@
 }
 
 .search {
+    margin-top: 20px;
     padding-left: 13px;
     display: flex;
     align-items: center;
@@ -145,7 +145,6 @@
 }
 
 .star {
-    margin-top: 20px;
     display: flex;
     align-items: center;
     justify-content: center;

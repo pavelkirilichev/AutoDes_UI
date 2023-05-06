@@ -66,4 +66,11 @@ const chapter = computed(() => {
 .v-leave-to {
     opacity: 0;
 }
+
+@media (max-width: 1015px) {
+    .title {
+        font-size: 20px;
+        line-height: 20px;
+    }
+}
 </style>

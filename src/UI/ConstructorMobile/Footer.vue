@@ -35,22 +35,22 @@ export default {
             },
             {
                 text: "Инфографика",
-                key: "infographics",
+                key: "Infographics",
                 src: "infographics"
             },
             {
                 text: "Фото",
-                key: "photo",
+                key: "Photo",
                 src: "photo"
             },
             {
                 text: "Фон",
-                key: "bg",
+                key: "BackGround",
                 src: "bg"
             },
             {
                 text: "Тип слайда",
-                key: "type_slide",
+                key: "TypeSlide",
                 src: "type_slide"
             }
         ]
@@ -66,8 +66,12 @@ export default {
 
 <style scoped>
 .footer {
+    position: fixed;
+    left: 0;
+    bottom: 0;
+    z-index: 2;
     width: 100vw;
-    height: 83px;
+    height: 67px;
     background: #EAEAFF;
     overflow-x: auto;
     -ms-overflow-style: none;
@@ -86,16 +90,16 @@ export default {
     display: flex;
     flex-direction: column;
     align-items: center;
-    padding: 10px 20px 0 20px;
+    padding: 7px 15px 0 15px;
 }
 
 .footer__item>*+* {
-    margin-top: 8px;
+    margin-top: 5px;
 }
 
 .footer__item img {
-    width: 27px;
-    height: 27px;
+    width: 24px;
+    height: 24px;
 }
 
 .item__img--active {
@@ -111,7 +115,7 @@ export default {
     display: none;
     position: absolute;
     width: 100%;
-    height: 7px;
+    height: 5px;
     left: 0;
     bottom: 0;
     background: #3B0CFA;
@@ -124,7 +128,7 @@ export default {
 
 .footer__item__active {
     background: #F7F7FF;
-    padding: 10px 25px 0 25px;
+    padding: 7px 20px 0 20px;
 }
 
 .footer__item__active .item__img--active {

@@ -31,7 +31,7 @@
             <textarea class="support__textarea dark--medium" placeholder="Введите текст..."></textarea>
         </div>
         <Button color="blue" class="support__btn">Отправить</Button>
-</div>
+    </div>
 </template>
 
 <script setup>
@@ -157,5 +157,39 @@ const copyDisplay = ref(0)
 .support__btn {
     margin-top: 23px;
     border-radius: 10px;
+}
+
+@media (max-width: 1015px) {
+    .support__textarea {
+        max-width: 92.5vw;
+    }
+
+    .support__title {
+        width: 92.5vw;
+        max-width: 529px;
+    }
+
+    .support__textarea {
+        margin-top: 20px;
+    }
+
+    .support__btn {
+        width: 92.5vw;
+        max-width: 529px;
+        height: 40px;
+        border-radius: 5px;
+    }
+
+    .mail-copy__block {
+        display: flex;
+        align-items: center;
+        position: absolute;
+        right: 65px;
+        padding: 3px 5px 3px 5px;
+    }
+
+    .mail-copy__block span {
+        font-size: 8px;
+    }
 }
 </style>

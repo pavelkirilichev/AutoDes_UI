@@ -31,7 +31,7 @@
 </template>
 
 <script setup>
-import Button from "./Buttons/Button.vue";
+import Button from "../Buttons/Button.vue";
 </script>
 
 <style scoped>

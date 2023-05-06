@@ -21,13 +21,41 @@
                 </div>
                 <Button :color="rate.id == RateSelect ? 'pink' : 'blue'" class="item__btn">{{
                     rate.title == RateTitle ?
-                        'Тариф выбран' : 'Выбрать тариф'
+                    'Тариф выбран' : 'Выбрать тариф'
                 }}</Button>
                 <p class="align--center" :class="rate.id == RateSelect ? 'violet--medium' : 'violet--medium'">{{
                     rate.description
                 }}</p>
             </div>
 
+        </div>
+        <div class="rates__main-mobile" :style="{ marginTop: '20px' }">
+            <img src="/images/rates/arrow-right.svg" alt="" class="arrow-left" v-if="RateIndex > 1"
+                @click="changeIndex('left')">
+            <div class="item" :class="rate.id == RateSelect ? 'item-active' : ''"
+                v-for="rate in rates.filter(item => item.id === RateIndex)" @mouseover="setRateSelect(rate.id)"
+                @mouseleave="setRateSelect(0)" @click="setRateTitle(rate.title)">
+                <div class="title">
+                    <span class="dark--semibold">{{ rate.title }}</span>
+                    <span class="dark--semibold">{{ rate.price }} ₽</span>
+                </div>
+                <div class="list">
+                    <div v-for="option in rate.options" class="rates__item">
+                        <img alt=""
+                            :src="rate.id == RateSelect ? '/images/rates/mark-pink.svg' : '/images/rates/mark-blue.svg'">
+                        <p class="dark--medium" v-html="option"></p>
+                    </div>
+                </div>
+                <Button :color="rate.id == RateSelect ? 'pink' : 'blue'" class="item__btn">{{
+                    rate.title == RateTitle ?
+                    'Тариф выбран' : 'Выбрать тариф'
+                }}</Button>
+                <p class="align--center" :class="rate.id == RateSelect ? 'violet--medium' : 'violet--medium'">{{
+                    rate.description
+                }}</p>
+            </div>
+            <img src="/images/rates/arrow-right.svg" alt="" class="arrow-right" v-if="RateIndex < 3"
+                @click="changeIndex('right')">
         </div>
     </div>
 </template>
@@ -40,6 +68,7 @@ import Button from '@/UI/Buttons/Button.vue';
 
 const RateSelect = ref(0)
 const RateTitle = ref("Презентации")
+const RateIndex = ref(2)
 
 function setRateSelect(id) {
     RateSelect.value = id
@@ -94,6 +123,15 @@ let rates = [
         ]
     }
 ]
+
+function changeIndex(side) {
+    if (side === "left") {
+        RateIndex.value -= 1
+    }
+    else {
+        RateIndex.value += 1
+    }
+}
 </script>
 
 <style scoped>
@@ -176,5 +214,45 @@ let rates = [
 .item__btn {
     margin: 20px 0;
     border-radius: 10px;
+}
+
+.rates__main-mobile {
+    display: none;
+}
+
+@media (max-width: 1015px) {
+    .rates__title-block span {
+        font-size: 15px;
+    }
+
+    .rates__main-mobile {
+        position: relative;
+        display: flex;
+        width: 100vw;
+        max-width: 450px;
+        justify-content: center;
+    }
+
+    .rates__main {
+        display: none;
+    }
+
+    .arrow-left {
+        transform: rotate(180deg);
+        position: absolute;
+        left: 3%;
+        top: calc(50% - 9px);
+    }
+
+    .arrow-right {
+        position: absolute;
+        right: 3%;
+        top: calc(50% - 9px);
+    }
+
+    .item {
+        max-width: 300px;
+        width: 80%;
+    }
 }
 </style>

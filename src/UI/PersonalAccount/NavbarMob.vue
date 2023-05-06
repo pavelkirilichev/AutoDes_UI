@@ -1,13 +1,14 @@
 <template>
-    <div class="navbar__main">
+    <div class="navbar__main" :class="navbar == 0 ? 'navbar__main--disable' : ''">
         <div class="logo__block navbar__topic">
             <div class="navbar__topic__logo">
-                <img src="/images/logo.svg" alt="" />
+                <img src="/images/logo.svg" alt="" class="logo-img" />
                 <span class="item__text text__logo">Autodesigner</span>
             </div>
-            <img src="/images/navbar/close.svg" />
+            <img :src="`/images/navbar/${navbar == 1 ? 'close' : 'burger'}.svg`" class="close-img"
+                @click="$emit('changeNavbar')" />
         </div>
-        <ul class="navbar__left navbar__list">
+        <ul class="navbar__left navbar__list" v-if="navbar == 1">
             <li>
                 <span class="black--medium">Мои проекты</span>
             </li>
@@ -24,7 +25,7 @@
                 <span class="black--medium">Блог</span>
             </li>
         </ul>
-        <div class="btn__container">
+        <div class="btn__container" v-if="navbar == 1">
             <Button color="pink-transparent">Выйти</Button>
             <button class="btn-arrow">
                 <span>Перейти в личный кабинет</span>
@@ -33,17 +34,43 @@
         </div>
     </div>
 </template>
-<script setup>
-import Button from "./Buttons/Button.vue";
+<script>
+import Button from "../Buttons/Button.vue";
+import { ref } from "vue";
+
+export default {
+    components: { Button },
+    emits: [
+        "changeNavbar"
+    ],
+    props: {
+        navbar: Number
+    }
+}
+
 </script>
 
 <style scoped>
+.close-img {
+    margin-right: 10px;
+}
+
+.logo-img {
+    width: 37px;
+    height: 37px;
+}
+
 .navbar__main {
     width: 100%;
-    padding: 36px 5px 0 6px;
+    height: 100vh;
+    padding: 36px 15px 0 15px;
     display: flex;
     flex-direction: column;
-    justify-content: center;
+    background: #F5F5F7;
+}
+
+.navbar__main--disable {
+    height: initial;
 }
 
 .navbar__topic {

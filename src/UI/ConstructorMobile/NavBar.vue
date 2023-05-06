@@ -31,7 +31,7 @@
     }
 }" />
                             <div class="slider__value">
-                                <span class="dark--medium">{{ value }}</span>
+                                <input class="dark--medium slider__input" v-model="value" />
                             </div>
                         </div>
                     </div>
@@ -107,7 +107,7 @@ import { ref, watch } from 'vue'
 
 import VueSlider from 'vue-slider-component'
 import 'vue-slider-component/theme/default.css'
-const value = ref(6)
+const value = ref(12)
 const hideMenu = ref(1)
 const longRow = ref("")
 
@@ -133,6 +133,7 @@ function changeHide(is_long) {
 <style scoped>
 .navbar {
     position: fixed;
+    z-index: 2;
     left: 0;
     top: 0;
     width: 100vw;
@@ -146,8 +147,10 @@ function changeHide(is_long) {
 }
 
 
+
 .navbar--high {
     height: 100vh;
+    overflow-x: hidden;
 }
 
 .navbar::-webkit-scrollbar {
@@ -156,9 +159,9 @@ function changeHide(is_long) {
 }
 
 .navbar__row {
-    box-shadow: 0px 2px 2px rgba(0, 0, 0, 0.25);
-    padding: 15px 15px 0 15px;
-    height: 96px;
+    box-shadow: 0px 2px 2px rgb(0 0 0 / 25%);
+    padding: 0px 15px 0 15px;
+    height: 65px;
     background: #EAEAFF;
     padding-right: 15px;
     width: fit-content;
@@ -192,13 +195,20 @@ function changeHide(is_long) {
 }
 
 .select-menu--fat {
-    right: calc(50% - 123.5px);
+    right: calc(50% - 130px);
 }
 
 .select-menu__inner--fat {
     padding: 10px 6px;
-    width: 247px;
-    height: 97px;
+    width: 260px;
+}
+
+.slider__input {
+    background: inherit;
+    outline: none;
+    border: none;
+    width: 90%;
+    text-align: center;
 }
 
 .select-menu--dotted {

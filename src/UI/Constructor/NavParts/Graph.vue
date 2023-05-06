@@ -121,14 +121,10 @@ const value = ref(6)
     width: 13px;
 }
 
-.select-menu--fat {
-    right: -98px;
-}
 
 .select-menu__inner--fat {
     padding: 10px 6px;
-    width: 247px;
-    height: 97px;
+    width: 260px;
 }
 
 .select-menu--dotted {
@@ -143,13 +139,10 @@ const value = ref(6)
     width: 62px;
 }
 
-.select-menu--rotate {
-    right: -98px;
-}
 
 .select-menu__inner--rotate {
     padding: 5px;
-    width: 247px;
+    width: 260px;
 }
 
 .item--dotted {

@@ -56,8 +56,8 @@
 
 <script setup>
 import Button from "@/UI/Buttons/Button.vue";
-import Footer from "../UI/Footer.vue";
-import NavBar from "../UI/NavBar.vue";
+import Footer from "../UI/PersonalAccount/Footer.vue";
+import NavBar from "../UI/PersonalAccount/NavBar.vue";
 import Main from "../UI/PersonalAccount/Main.vue";
 </script>
 

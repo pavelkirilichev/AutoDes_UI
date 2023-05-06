@@ -2,7 +2,7 @@
     <footer class="footer">
         <div class="footer__top">
             <div class="logo__block">
-                <img src="/images/logo.svg" alt="">
+                <img src="/images/logo.svg" alt="" class="logo-img">
                 <span class="item__text text__logo">Autodesigner</span>
             </div>
             <div class="social__list">
@@ -30,12 +30,17 @@
 
 
 <style scoped>
+.logo-img {
+    width: 37px;
+    height: 37px;
+}
+
 .no-click {
     cursor: default !important;
 }
 
 .footer {
-    padding: 20px 0;
+    padding: 20px 15px;
     width: 100%;
     margin: 0 auto;
     display: flex;

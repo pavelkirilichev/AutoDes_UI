@@ -6,22 +6,43 @@
         </div>
         <Footer />
     </div>
+    <div class="lk_mobile">
+        <NavbarMob @changeNavbar="changeNavbar" :navbar="navbar" />
+        <div class="lk_mobile__main" :class="navbar == 1 ? 'hide' : ''">
+            <Main />
+        </div>
+        <FooterMob :class="navbar == 1 ? 'hide' : ''" />
+    </div>
 </template>
   
 <script setup>
 
-import Footer from "../UI/Footer.vue";
+import Footer from "../UI/PersonalAccount/Footer.vue";
 import Main from "../UI/PersonalAccount/Main.vue";
 import ModalAuth from "../UI/Modals/ModalAuth.vue"
-import NavbarMob from "../UI/NavbarMob.vue";
-import FooterMob from "../UI/FooterMob.vue";
-import NavBar from "../UI/NavBar.vue";
+import NavbarMob from "../UI/PersonalAccount/NavbarMob.vue";
+import FooterMob from "../UI/PersonalAccount/FooterMob.vue";
+import NavBar from "../UI/PersonalAccount/NavBar.vue";
 import ModalCash from "../UI/PersonalAccount/Payment/ModalCash.vue";
 import ModalFree from "../UI/PersonalAccount/Payment/ModalFree.vue";
 import Constructor from "../UI/Constructor/Main.vue"
+import { ref, defineEmits } from 'vue';
+
+
+const navbar = ref(0)
+
+const changeNavbar = () => {
+    navbar.value = navbar.value == 0 ? 1 : 0
+}
+
+const emit = defineEmits(['changeNavbar'])
 </script>
   
 <style>
+.hide {
+    display: none !important;
+}
+
 * {
     box-sizing: border-box;
     margin: 0;
@@ -184,6 +205,34 @@ textarea {
 input {
     border: none;
     outline: none;
+}
+
+.lk_mobile {
+    display: none;
+    justify-content: space-between;
+    background: #F5F5F7;
+    min-height: 100vh;
+}
+
+.lk_mobile__main {
+    padding-top: 20px;
+    min-height: calc(100vh - 400px);
+}
+
+@media (max-width: 1015px) {
+    .main {
+        display: none;
+    }
+
+    .lk_mobile {
+        display: flex;
+        flex-direction: column;
+    }
+
+    .black--semibold {
+        font-size: 20px;
+    }
+
 }
 </style>
   
