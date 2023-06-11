@@ -2,7 +2,7 @@
     <div class="elements">
         <div class="search">
             <img src="/images/constructor/sidebar_menu/elements/look.svg" />
-            <input class="search__font dark--medium" placeholder="Поиск шрифтов" />
+            <input class="search__font dark--medium" placeholder="Поиск элементов" />
         </div>
         <div class="elements-top">
             <div class="styles">

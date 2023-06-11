@@ -29,8 +29,8 @@
             </div>
 
         </div>
-        <div class="rates__main-mobile" :style="{ marginTop: '20px' }">
-            <img src="/images/rates/arrow-right.svg" alt="" class="arrow-left" v-if="RateIndex > 1"
+        <div class="rates__main-mobile" :style="{ marginTop: '20px' }" v-touch:swipe="changeIndexSwipe()">
+            <img src="/images/rates/arrow-left.svg" alt="" class="arrow-left" v-if="RateIndex > 1"
                 @click="changeIndex('left')">
             <div class="item" :class="rate.id == RateSelect ? 'item-active' : ''"
                 v-for="rate in rates.filter(item => item.id === RateIndex)" @mouseover="setRateSelect(rate.id)"
@@ -124,6 +124,21 @@ let rates = [
     }
 ]
 
+function changeIndexSwipe() {
+    return function (side) {
+        if (side === "left") {
+            if (RateIndex.value < 3) {
+                RateIndex.value += 1
+            }
+        }
+        else if (side === "right") {
+            if (RateIndex.value > 1) {
+                RateIndex.value -= 1
+            }
+        }
+    }
+
+}
 function changeIndex(side) {
     if (side === "left") {
         RateIndex.value -= 1
@@ -205,6 +220,7 @@ function changeIndex(side) {
 
 .rates__item {
     display: flex;
+    align-items: center;
 }
 
 .rates__item>*+* {
@@ -238,14 +254,17 @@ function changeIndex(side) {
     }
 
     .arrow-left {
-        transform: rotate(180deg);
-        position: absolute;
+        width: 13.75px;
+        height: 22.25px;
+        position: fixed;
         left: 3%;
         top: calc(50% - 9px);
     }
 
     .arrow-right {
-        position: absolute;
+        width: 13.75px;
+        height: 22.25px;
+        position: fixed;
         right: 3%;
         top: calc(50% - 9px);
     }

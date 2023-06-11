@@ -1,8 +1,8 @@
 <template>
     <div class="navbar" :class="hideMenu == 0 ? 'navbar--high' : ''" @click="changeHideNavbar($event)">
-        <div class="navbar__row" :class="longRow">
+        <div class="navbar__row">
             <img src="/images/constructor/navbar/burger_mob.svg" alt="">
-            <div class="font-menu">
+            <div class="font-menu" :class="hideAllPuncts == 1 ? 'font-menu__hide-puncts' : ''">
                 <div class="color-select">
                     <img src="/images/constructor/navbar/fill.svg" alt="" />
                     <div class="color-select__choise" style="background-color: #9e73ee"></div>
@@ -11,9 +11,12 @@
                     <img src="/images/constructor/navbar/edit_color.svg" alt="" />
                     <div class="color-select__choise" style="background-color: #ff0099"></div>
                 </div>
-                <div class="graph-select" @click="changeHide(0)">
-                    <img src="/images/constructor/navbar/fat.svg" alt="">
-                    <img src="/images/constructor/navbar/arrow_down.svg" alt="">
+                <div class="graph-select">
+                    <div class="graph-select__inner" @click="setActivePunct(0)">
+                        <img src="/images/constructor/navbar/fat.svg" alt="">
+                        <img src="/images/constructor/navbar/arrow_down.svg" alt="">
+                    </div>
+
                     <div class="select-menu select-menu--fat">
                         <div class="select-menu__inner select-menu__inner--fat">
                             <span class="dark--medium">Выберите жирность обводки</span>
@@ -36,9 +39,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="graph-select" @click="changeHide(0)">
-                    <img src="/images/constructor/navbar/line_type.svg" alt="">
-                    <img src="/images/constructor/navbar/arrow_down.svg" alt="">
+                <div class="graph-select">
+                    <div class="graph-select__inner" @click="setActivePunct(1)">
+                        <img src="/images/constructor/navbar/line_type.svg" alt="">
+                        <img src="/images/constructor/navbar/arrow_down.svg" alt="">
+                    </div>
                     <div class="select-menu select-menu--dotted">
                         <div class="select-menu__inner select-menu__inner--dotted">
                             <div class="item--dotted">
@@ -59,9 +64,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="graph-select" @click="changeHide(1)">
-                    <img src="/images/constructor/navbar/rotate_orientation.svg" alt="">
-                    <img src="/images/constructor/navbar/arrow_down.svg" alt="">
+                <div class="graph-select">
+                    <div class="graph-select__inner" @click="setActivePunct(2)">
+                        <img src="/images/constructor/navbar/rotate_orientation.svg" alt="">
+                        <img src="/images/constructor/navbar/arrow_down.svg" alt="">
+                    </div>
                     <div class="select-menu select-menu--rotate">
                         <div class="select-menu__inner select-menu__inner--rotate">
                             <div class="item--rotate">
@@ -75,9 +82,11 @@
                         </div>
                     </div>
                 </div>
-                <div class="graph-select" @click="changeHide(2)">
-                    <img src="/images/constructor/navbar/rotate_gradus.svg" alt="">
-                    <img src="/images/constructor/navbar/arrow_down.svg" alt="">
+                <div class="graph-select">
+                    <div class="graph-select__inner" @click="setActivePunct(3)">
+                        <img src="/images/constructor/navbar/rotate_gradus.svg" alt="">
+                        <img src="/images/constructor/navbar/arrow_down.svg" alt="">
+                    </div>
                     <div class="select-menu select-menu--rotate">
                         <div class="select-menu__inner select-menu__inner--rotate">
                             <div class="item--rotate">
@@ -109,28 +118,49 @@ import VueSlider from 'vue-slider-component'
 import 'vue-slider-component/theme/default.css'
 const value = ref(12)
 const hideMenu = ref(1)
-const longRow = ref("")
+
+const hideAllPuncts = ref(0)
+const activePunct = ref(null)
+
+function setActivePunct(index) {
+    if (activePunct.value == index) {
+        hideAllPuncts.value = 1
+        hideMenu.value = 1
+        activePunct.value = null
+    }
+    else {
+        activePunct.value = index
+        hideAllPuncts.value = 0
+        hideMenu.value = 0
+    }
+}
+
+
 
 function changeHideNavbar(e) {
     if (e.currentTarget === e.target) {
         hideMenu.value = 1
-        longRow.value = ""
     }
 
 }
-function changeHide(is_long) {
-    if (is_long == 1) {
-        longRow.value = "navbar__row--long"
-    }
-    if (is_long == 2) {
-        longRow.value = "navbar__row--longer"
-    }
-    hideMenu.value = 0
 
-}
 </script>
 
 <style scoped>
+.font-menu__hide-punct .select-menu {
+    display: none
+}
+
+.graph-select__inner {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.graph-select__inner>*+* {
+    margin-left: 10px;
+}
+
 .navbar {
     position: fixed;
     z-index: 2;
@@ -195,12 +225,12 @@ function changeHide(is_long) {
 }
 
 .select-menu--fat {
-    right: calc(50% - 130px);
+    margin-left: 0;
 }
 
 .select-menu__inner--fat {
-    padding: 10px 6px;
-    width: 260px;
+    padding: 10px 15px;
+    width: 300px;
 }
 
 .slider__input {
@@ -224,8 +254,11 @@ function changeHide(is_long) {
 }
 
 .select-menu--rotate {
-    right: calc(50% - 123.5px);
+    position: fixed !important;
+    margin-top: 16px !important;
+    left: calc(50% - 123.5px)
 }
+
 
 .select-menu__inner--rotate {
     padding: 5px;
@@ -284,7 +317,7 @@ function changeHide(is_long) {
 }
 
 
-.navbar--high .graph-select:hover .select-menu {
+.navbar--high .graph-select__inner:hover+.select-menu {
     display: flex;
 }
 
@@ -359,41 +392,5 @@ function changeHide(is_long) {
 .color-select img {
     width: 19px;
     height: 19px;
-}
-
-@media (min-width: 370px) {
-
-    .navbar__row--long {
-        min-width: 130vw;
-    }
-
-    .navbar__row--longer {
-        min-width: 150vw;
-    }
-}
-
-@media (min-width: 420px) {
-
-    .navbar__row--long {
-        min-width: 115vw;
-    }
-
-    .navbar__row--longer {
-        min-width: 130vw;
-    }
-}
-
-@media (min-width: 550px) {
-    .font-menu>*+* {
-        margin-left: 15px;
-    }
-
-    .navbar__row--long {
-        min-width: 100vw;
-    }
-
-    .navbar__row--longer {
-        min-width: 100vw;
-    }
 }
 </style>

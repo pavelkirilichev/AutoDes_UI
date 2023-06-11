@@ -93,7 +93,7 @@ const chapter = computed(() => {
     return comp.value[chapterName.value]
 })
 
-const optionsShow = ref(1);
+const optionsShow = ref(0);
 
 
 function changeOptionsShow() {
@@ -104,8 +104,10 @@ function changeOptionsShow() {
 const sidebarShow = ref(0);
 
 function changesidebarShow() {
+    if (sidebarShow.value == 0) {
+        optionsShow.value = 0
+    }
     sidebarShow.value = sidebarShow.value == 0 ? 1 : 0
-    optionsShow.value = sidebarShow.value == 1 ? 0 : 1
 }
 
 function exitOptions() {

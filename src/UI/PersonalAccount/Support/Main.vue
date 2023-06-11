@@ -191,5 +191,10 @@ const copyDisplay = ref(0)
     .mail-copy__block span {
         font-size: 8px;
     }
+
+    .questions {
+        margin-left: 0;
+        width: initial;
+    }
 }
 </style>
